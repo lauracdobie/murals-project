@@ -19,6 +19,12 @@ const createRouter = function(collection){
       });
   });
 
+  //Get one mural
+
+  //Update a mural
+
+  //Delete a mural
+
   return router;
 
 };

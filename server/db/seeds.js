@@ -12,7 +12,8 @@ db.murals.insertMany([
         year: 2019,
         lat: 55.8648678764273,
         lng: -4.2564708648664045,
-        imageUrl: "../assets/crazy_cat_lady.jpg"
+        imageUrl: "../assets/crazy_cat_lady.jpg",
+        likes: 0
     },
     {
         name: "The Lost Giant",
@@ -23,7 +24,8 @@ db.murals.insertMany([
         year: 2017,
         lat: 55.865558,
         lng: -4.267994,
-        imageUrl: "../assets/lost_giant.jpg"
+        imageUrl: "../assets/lost_giant.jpg",
+        likes: 0
     },
     {
         name: "Dr Connolly, I presume",
@@ -33,7 +35,8 @@ db.murals.insertMany([
         description: "A reproduction of the Jack Vettriano painting from the World Tour of Scotland series in 1994 titled Dr Connolly I Presume",
         lat: 55.856538477588614,
         lng: -4.25557000806331,
-        imageUrl: "../assets/dr_connolly.jpg"
+        imageUrl: "../assets/dr_connolly.jpg",
+        likes: 0
     },
     {
         name: "Shadow Hand Puppets",
@@ -43,6 +46,7 @@ db.murals.insertMany([
         description: "Commissioned by Glasgow City Council to brighten up a dingy, but well used, underpass.",
         lat: 55.868329167922745, 
         lng: -4.2600252186499565,
-        imageUrl: "../assets/shadow_hand_puppets.jpg"
+        imageUrl: "../assets/shadow_hand_puppets.jpg",
+        likes: 0
     }
 ]);
