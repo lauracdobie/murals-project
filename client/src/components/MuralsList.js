@@ -1,4 +1,5 @@
 import Mural from './Mural';
+import MuralMap from './MuralMap';
 
 function MuralsList({murals}){
 
@@ -16,6 +17,7 @@ function MuralsList({murals}){
         <>
             <h3>I am the murals list</h3>
             {displayMurals}
+            <MuralMap murals={murals}/>
         </>
     )
 }
