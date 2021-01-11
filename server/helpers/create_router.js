@@ -30,7 +30,21 @@ const createRouter = function(collection){
       });
   });
 
+  //Add a mural
+
   //Update a mural
+  router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const newData = req.body;
+    delete newData._id;
+
+    collection.updateOne( {_id: ObjectID(id)}, { $set: newData } )
+      .then(result => res.json(result))
+      .catch(err => {
+        console.error(500);
+        res.json({ status: 500, error: err});
+      });
+  });
 
   //Delete a mural
 
