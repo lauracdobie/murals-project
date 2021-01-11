@@ -35,15 +35,18 @@ const createRouter = function(collection){
   //Update a mural
   router.put('/:id', (req, res) => {
     const id = req.params.id;
-    const newData = req.body;
-    delete newData._id;
+    const updatedData = req.body;
+    delete updatedData._id;
 
-    collection.updateOne( {_id: ObjectID(id)}, { $set: newData } )
-      .then(result => res.json(result))
-      .catch(err => {
-        console.error(500);
-        res.json({ status: 500, error: err});
-      });
+    collection
+    .updateOne({ _id: ObjectID(id) }, { $set: updatedData })
+    .then(result => {
+      res.json(result);
+    })
+    .catch((err) => {
+      res.status(500);
+      res.json({ status: 500, error: err });
+    });
   });
 
   //Delete a mural

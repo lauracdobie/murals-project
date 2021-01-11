@@ -35,8 +35,7 @@ function Mural ({mural, updateMural}){
             lat: mural.lat,
             lng: mural.lng,
             imageURL: mural.imageUrL,
-            likes: mural.likes + 1
-            
+            likes: mural.likes += 1
         })
 
     }

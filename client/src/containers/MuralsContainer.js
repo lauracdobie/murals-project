@@ -1,4 +1,4 @@
-import {getMurals, updateDbMural} from './MuralsService';
+import MuralsService from './MuralsService';
 import {useEffect, useState} from 'react';
 import MuralsList from '../components/MuralsList';
 import MuralMap from '../components/MuralMap';
@@ -7,7 +7,7 @@ function MuralsContainer () {
     
     const [murals, setMurals] = useState([]);
     useEffect(()=> {
-        getMurals() 
+        MuralsService.getMurals() 
         .then((data) => {
             console.log(data)
             setMurals(data)
@@ -17,7 +17,8 @@ function MuralsContainer () {
 
     const updateMural = (updatedMural) => {
         //Updates mural document in database collection
-        updateDbMural(updatedMural);
+        MuralsService.updateDbMural(updatedMural);
+        console.log(updatedMural);
 
         //Update murals list in front end
         //Gets the index of the mural to update
