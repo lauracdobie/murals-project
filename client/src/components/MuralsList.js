@@ -6,6 +6,7 @@ function MuralsList({murals}){
 
     const displayMurals = murals.map(mural => 
         <Mural
+        image={mural.imageUrl}
         name={mural.name}
         artist={mural.artist}
         year={mural.year}

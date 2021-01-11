@@ -17,9 +17,6 @@ const MuralMap = ({murals}) => {
         return [mural.lat, mural.lng]
     })
 
-    console.log("here is the lat lng");
-    console.log(getLatLng);
-
     const muralMarkers = murals.map((mural, index) => {
         return (
             <>
