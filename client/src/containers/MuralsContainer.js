@@ -1,5 +1,6 @@
 import {getMurals} from './MuralsService';
 import {useEffect, useState} from 'react';
+import MuralsList from '../components/MuralsList';
 
 function MuralsContainer () {
     
@@ -15,7 +16,8 @@ function MuralsContainer () {
     return (
 
         <>
-        <h2>I am the murals container </h2>
+            <h2>I am the murals container </h2>
+            <MuralsList murals={murals}/>
         </>
     )
 }
