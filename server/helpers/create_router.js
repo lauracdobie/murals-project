@@ -20,6 +20,15 @@ const createRouter = function(collection){
   });
 
   //Get one mural
+  router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    collection.findOne( {_id: ObjectID(id)} )
+      .then(doc => res.json(doc))
+      .catch(err => {
+        console.error(500);
+        res.json({ status: 500, error: err });
+      });
+  });
 
   //Update a mural
 
