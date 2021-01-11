@@ -49,7 +49,7 @@ function Mural ({mural, updateMural}){
             <p>{mural.instagram}</p>
             <p>{mural.location}</p>
             <p>{mural.description}</p>
-            <p>{mural.likes}</p>
+            <p>Likes: {mural.likes}</p>
             <button onClick={handleLike}>Like</button>
         </div>
     )
