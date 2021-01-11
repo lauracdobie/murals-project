@@ -2,6 +2,7 @@ import Mural from './Mural';
 import MuralMap from './MuralMap';
 
 function MuralsList({murals}){
+    if (!murals) return null;
 
     const displayMurals = murals.map(mural => 
         <Mural
