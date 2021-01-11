@@ -1,7 +1,14 @@
-function Mural (){
+function Mural (props){
 
     return (
-        <h3>This is a mural</h3>
+        <div className='mural-listing'>
+            <h3>{props.name}</h3>
+            <p>{props.artist}</p>
+            <p>{props.year}</p>
+            <p>{props.instagram}</p>
+            <p>{props.location}</p>
+            <p>{props.description}</p>
+        </div>
     )
 }
 
