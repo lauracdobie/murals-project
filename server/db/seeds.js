@@ -10,8 +10,8 @@ db.murals.insertMany([
         location: "96 Sauchiehall Street",
         description: "A collaboration on hoardings that were erected following the fire in, and demolition of, Victoria's nightclub.",
         year: 2019,
-        lat: 55.864690,
-        lng: -4.256417,
+        lat: 55.8648678764273,
+        lng: -4.2564708648664045,
         imageUrl: "../assets/crazy_cat_lady.jpg"
     },
     {
@@ -31,8 +31,8 @@ db.murals.insertMany([
         instagram: "@rogueoner",
         location: "19 Dixon Street",
         description: "A reproduction of the Jack Vettriano painting from the World Tour of Scotland series in 1994 titled Dr Connolly I Presume",
-        lat: 55.856538,
-        lng: -4.255570,
+        lat: 55.856538477588614,
+        lng: -4.25557000806331,
         imageUrl: "../assets/dr_connolly.jpg"
     },
     {
@@ -41,8 +41,8 @@ db.murals.insertMany([
         instagram: "@rogueoner",
         location: "Cowcaddens Subway station underpass",
         description: "Commissioned by Glasgow City Council to brighten up a dingy, but well used, underpass.",
-        lat: 55.856538,
-        lng: -4.255570,
+        lat: 55.868329167922745, 
+        lng: -4.2600252186499565,
         imageUrl: "../assets/shadow_hand_puppets.jpg"
     }
 ]);

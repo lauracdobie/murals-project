@@ -19,7 +19,6 @@ function MuralsContainer () {
         <>
             <h2>I am the murals container </h2>
             <MuralsList murals={murals}/>
-            <MuralMap murals={murals}/>
         </>
     )
 }
