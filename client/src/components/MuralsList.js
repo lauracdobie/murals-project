@@ -6,6 +6,7 @@ function MuralsList({murals, updateMural}){
 
     const displayMurals = murals.map(mural => 
         <Mural
+        mural={mural}
         image={mural.imageUrl}
         name={mural.name}
         artist={mural.artist}
@@ -13,7 +14,9 @@ function MuralsList({murals, updateMural}){
         instagram={mural.instagram}
         location={mural.location}
         description={mural.description}
-        updateMural={updateMural}/>
+        likes={mural.likes}
+        updateMural={updateMural}
+        />
         )
 
     return (

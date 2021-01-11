@@ -6,7 +6,7 @@ export const getMurals = () => {
 }
 
 export const updateDbMural = (mural) => {
-    return fetch(baseURL + mural._id {
+    return fetch(baseURL + mural._id, {
         method: 'PUT',
         body: JSON.stringify(mural),
         headers: {
