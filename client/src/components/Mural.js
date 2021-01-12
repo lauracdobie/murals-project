@@ -5,7 +5,7 @@ import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
 import {useState} from 'react';
 
 function Mural ({mural, updateMural}){
-    const [likeButtonText, setLikeButtonText] = useState("Like 👍");
+    const [likeButtonText, setLikeButtonText] = useState("♥️");
     if (!mural) return null;
     
     let muralImage = {};
@@ -29,13 +29,13 @@ function Mural ({mural, updateMural}){
 
     const handleLike = () => {
         let updatedValue = null;
-        if (likeButtonText === "Like 👍") {
+        if (likeButtonText === "♥️") {
             updatedValue = mural.likes += 1;
-            setLikeButtonText("Unlike 👎");
+            setLikeButtonText("♡");
         }
         else {
             updatedValue = mural.likes -= 1;
-            setLikeButtonText("Like 👍");
+            setLikeButtonText("♥️");
         }
         
         updateMural({
@@ -60,7 +60,7 @@ function Mural ({mural, updateMural}){
             <h3>{mural.name}</h3>
             <p>{mural.artist}</p>
             <p>{mural.year}</p>
-            <p>{mural.instagram}</p>
+            <p>Instagram: @{mural.instagram}</p>
             <p>{mural.location}</p>
             <p>{mural.description}</p>
             <p>Likes: {mural.likes}</p>
