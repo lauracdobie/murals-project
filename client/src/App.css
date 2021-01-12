@@ -27,3 +27,7 @@
   width: 200px;
   height: 200px;
 }
+
+.popup >p{
+  font-size: 200px;
+}
