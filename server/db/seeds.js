@@ -66,4 +66,16 @@ db.murals.insertMany([
         imageUrl: "./static/strathclyde_university.jpg",
         likes: 0
     },
+    {
+        name: "Saint Mungo",
+        artist: "Smug",
+        instagram: "smugone",
+        location: "287 High Street",
+        description: "Another piece of work by Smug, adding to his impressive portfolio of work.",
+        year: 2016,
+        lat: 55.860984159574954,
+        lng: -4.238506372111869, 
+        imageUrl: "./static/saint_mungo.jpg",
+        likes: 0
+    },
 ]);
