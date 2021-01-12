@@ -141,15 +141,27 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "Woman in Black",
+        name: "Study of a Woman in Black 1",
         artist: "Klingatron",
         instagram: "jamesklinge_art",
         location: "Bridgegate Path",
-        description: "James Klinge created to create this mural with a specific focus on detail through distinctive use of intricate stencil techniques.",
+        description: "James Klinge created this mural with a specific focus on detail through distinctive use of intricate stencil techniques.",
         year: 2017,
         lat: 55.85497534234021,
         lng: -4.245830972111935,
         imageUrl: "./static/woman_in_black.jpg",
+        likes: 0
+    },
+    {
+        name: "Study of a Woman in Black 2",
+        artist: "Klingatron",
+        instagram: "jamesklinge_art",
+        location: "St Andrews Street",
+        description: "Another mural by Klinge with a specific focus on detail through distinctive use of intricate stencil techniques.",
+        year: 2018,
+        lat: 55.85566330579437,
+        lng: -4.2444880739633355,
+        imageUrl: "./static/woman_in_black2.jpg",
         likes: 0
     },
     {
