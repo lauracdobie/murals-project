@@ -130,7 +130,7 @@ db.murals.insertMany([
     {
         name: "Billy Connolly",
         artist: "Rogue and Art Pistol",
-        instagram: "rogueone",
+        instagram: "rogueoner",
         instagram2: "artpistol",
         location: "Osborne Street",
         description: "Commemoration of Billy Connolly's 75th Birthday.",
@@ -177,16 +177,16 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        instagram2: "",
-        location: "",
-        description: "",
-        year: 201,
-        lat:
-        lng:
-        imageUrl: "./static/.jpg",
+        name: "Glasgow Tiger",
+        artist: "Klingatron and Art Pistol",
+        instagram: "jamesklinge_art",
+        instagram2: "artpistol",
+        location: "Custom House Quay",
+        description: "A re-imagination of the original tiger that used to reside on this wall.",
+        year: 2015,
+        lat: 55.855674859794846, 
+        lng: -4.2555696796099225,
+        imageUrl: "./static/tiger.jpg",
         likes: 0
     },
     {
