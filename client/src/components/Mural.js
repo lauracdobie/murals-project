@@ -39,7 +39,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, addT
     return (
         <div className='mural-listing'>
             <img className='mural-pic' src={mural.imageUrl} alt={mural.name}/>
-            <h3>{mural.name}</h3>
+            <h3>{mural.name} <button onClick={handleAddToTour}>Add mural to my tour list</button></h3>
             <p>{mural.artist}</p>
             <p>{mural.year}</p>
             <p>Instagram: <a href={instagramLink} target="_blank">@{mural.instagram}</a></p>
@@ -48,7 +48,6 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, addT
             <p>{mural.description}</p>
             <p>Likes: {mural.likes}</p>
             <button onClick={handleLike}>{likeButtonText}</button>
-            <button onClick={handleAddToTour}>Add mural to my tour list</button>
         </div>
     )
 }
