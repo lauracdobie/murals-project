@@ -16,6 +16,7 @@ function MuralsList({murals, updateMural}){
         description={mural.description}
         likes={mural.likes}
         updateMural={updateMural}
+        instagramLink = {"https://www.instagram.com/" + mural.instagram}
         />
         )
 
