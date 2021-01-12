@@ -19,14 +19,9 @@ const MuralMap = ({murals, updateMural}) => {
             <>
                 <Marker key={index} position={[popupInfo.lat, popupInfo.lng]} title={popupInfo.name} icon={markerIcon} >
                     <Popup className='popup'>
-                        <Mural
-<<<<<<< HEAD
-                            mural={mural}
-                            updateMural={updateMural}
-=======
-                            mural={popupInfo}
+                        <PopupInfo
+                            popupInfo={popupInfo}
                             updateMural={updateMural} 
->>>>>>> e816522eadad19aa9c946139c11948a9b2a736c7
                         />
                     </Popup>
                 </Marker>
