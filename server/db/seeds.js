@@ -215,16 +215,15 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        instagram2: "",
-        location: "",
-        description: "",
-        year: 201,
-        lat:
-        lng:
-        imageUrl: "./static/.jpg",
+        name: "Honey I Shrunk The Kids",
+        artist: "smug",
+        instagram: "smugone",
+        location: "33 Mitchell Street",
+        description: "A huge piece of realistic street art, depicting a girl with a magnifying glass trying to pick something up off the ground.",
+        year: 2012,
+        lat: 55.85913949698629, 
+        lng: -4.256065161854666,
+        imageUrl: "./static/shrunk_kids.jpg",
         likes: 0
     },
     {
