@@ -128,15 +128,16 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        location: "",
-        description: "",
-        year: 2016,
-        lat: ,
-        lng: , 
-        imageUrl: "./static/.jpg",
+        name: "Billy Connolly",
+        artist: "Rogue and Art Pistol",
+        instagram: "rogueone",
+        instagram2: "artpistol",
+        location: "Osborne Street",
+        description: "Commemoration of Billy Connolly's 75th Birthday.",
+        year: 2017,
+        lat: 55.85647641568549,
+        lng: -4.2486076432759665,
+        imageUrl: "./static/billy_connolly.jpg",
         likes: 0
     },
 ]);
