@@ -2,12 +2,14 @@ import {getMurals, updateDbMural} from './MuralsService';
 import {useEffect, useState} from 'react';
 import MuralsList from '../components/MuralsList';
 import MuralFilterForm from '../components/MuralFilterForm';
+import TourFilter from '../components/TourFilter';
 
 function MuralsContainer () {
     
     const [murals, setMurals] = useState([]);
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
+    const [tourMurals, setTourMurals] = useState([]);
     useEffect(()=> {
         getMurals() 
         .then((data) => {
@@ -43,6 +45,16 @@ function MuralsContainer () {
         setMuralSelector(userInput);
     };
 
+    const addToTour = (newTourMural) => {
+        const muralToAdd = murals.find(mural => mural._id === newTourMural._id);
+        setTourMurals([...tourMurals, muralToAdd])
+        console.log(tourMurals);
+    }
+
+    const tourMuralFilter = () => {
+        setFilteredMurals(tourMurals);
+    }
+
     const updateMural = (updatedMural) => {
         //Updates mural document in database collection
         updateDbMural(updatedMural);
@@ -66,11 +78,14 @@ function MuralsContainer () {
     return (
 
         <>
-            <h2>I am the murals container </h2>
+            <h2>Discover Glasgow's vibrant street art!</h2>
             <div>
                 <MuralFilterForm onUserInput={handleUserFilter} onUserSelect={handleMuralSelector}/>
             </div>
-            <MuralsList murals={filteredMurals} updateMural={updateMural}/>
+            <div>
+                <TourFilter tourMuralFilter={tourMuralFilter}/>
+            </div>
+            <MuralsList murals={filteredMurals} updateMural={updateMural} addToTour={addToTour}/>
         </>
     )
 }
