@@ -23,8 +23,13 @@ function MuralsContainer () {
     const handleUserFilter = (userInput) => {
         const someMurals = murals.filter((currentMural) => {
             console.log(currentMural)
+            console.log(muralSelector)
+            
             if (muralSelector === "year") {
-                return currentMural[muralSelector] == (userInput);
+                if (currentMural.hasOwnProperty("year")) {
+                    return currentMural[muralSelector].toString().toUpperCase().includes(userInput.toUpperCase());
+                    // return currentMural[muralSelector] == (userInput);
+                }
             } else {
                 return currentMural[muralSelector].toUpperCase().includes(userInput.toUpperCase());
             }
