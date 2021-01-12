@@ -5,7 +5,7 @@ import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
 import {useState} from 'react';
 
 function PopupInfo ({popupInfo, updatePopupInfo}){
-    const [likeButtonText, setLikeButtonText] = useState( "Like 👍");
+    const [likeButtonText, setLikeButtonText] = useState( "♥️");
     if (!popupInfo) return null;
     
     let muralImage = {};
@@ -29,13 +29,13 @@ function PopupInfo ({popupInfo, updatePopupInfo}){
 
     const handleLike = () => {
         let updatedValue = null;
-        if (likeButtonText === "Like 👍") {
+        if (likeButtonText === "♥️") {
             updatedValue = popupInfo.likes += 1;
-            setLikeButtonText("Unlike 👎");
+            setLikeButtonText("♡");
         }
         else {
             updatedValue = popupInfo.likes -= 1;
-            setLikeButtonText("Like 👍");
+            setLikeButtonText("♥️");
         }
     }
 
