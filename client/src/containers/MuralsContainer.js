@@ -51,6 +51,15 @@ function MuralsContainer () {
         console.log(tourMurals);
     }
 
+    const removeFromTour = (muralToRemove) => {
+        let muralsList = [...tourMurals];
+        const muralToRemoveIndex = tourMurals.indexOf(muralToRemove);
+        muralsList.splice(muralToRemoveIndex, 1);
+        setTourMurals(muralsList);
+        console.log(tourMurals);
+
+    }
+
     const tourMuralFilter = () => {
         setFilteredMurals(tourMurals);
     }
@@ -85,7 +94,7 @@ function MuralsContainer () {
             <div>
                 <TourFilter tourMuralFilter={tourMuralFilter}/>
             </div>
-            <MuralsList murals={filteredMurals} updateMural={updateMural} addToTour={addToTour}/>
+            <MuralsList murals={filteredMurals} updateMural={updateMural} addToTour={addToTour} removeFromTour={removeFromTour}/>
         </>
     )
 }
