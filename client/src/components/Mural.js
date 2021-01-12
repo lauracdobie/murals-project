@@ -4,8 +4,8 @@ import DrConnolly from "../assets/dr_connolly.jpg"
 import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
 import {useState} from 'react';
 
-function Mural ({mural, updateMural}){
-    const [likeButtonText, setLikeButtonText] = useState("Like 👍");
+function Mural ({mural, updateMural, instagramLink, instagram2Link}){
+    const [likeButtonText, setLikeButtonText] = useState("♥️");
     if (!mural) return null;
     
     let muralImage = {};
@@ -29,13 +29,13 @@ function Mural ({mural, updateMural}){
 
     const handleLike = () => {
         let updatedValue = null;
-        if (likeButtonText === "Like 👍") {
+        if (likeButtonText === "♥️") {
             updatedValue = mural.likes += 1;
-            setLikeButtonText("Unlike 👎");
+            setLikeButtonText("♡");
         }
         else {
             updatedValue = mural.likes -= 1;
-            setLikeButtonText("Like 👍");
+            setLikeButtonText("♥️");
         }
         
         updateMural({
@@ -53,14 +53,15 @@ function Mural ({mural, updateMural}){
         })
 
     }
-
+    const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link}>@{mural.instagram2}</a></p>): null
     return (
         <div className='mural-listing'>
             <img className='mural-pic' src={muralImage} alt={mural.name}/>
             <h3>{mural.name}</h3>
             <p>{mural.artist}</p>
             <p>{mural.year}</p>
-            <p>{mural.instagram}</p>
+            <p>Instagram: <a href={instagramLink}>@{mural.instagram}</a></p>
+            {instagram2Node}
             <p>{mural.location}</p>
             <p>{mural.description}</p>
             <p>Likes: {mural.likes}</p>

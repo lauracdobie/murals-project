@@ -1,10 +1,11 @@
 import {useState} from 'react';
 import { Popup, MapContainer as Map, TileLayer, Marker } from 'react-leaflet';
 import Mural from './Mural';
+import PopupInfo from './PopupInfo';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const MuralMap = ({murals}) => {
+const MuralMap = ({murals, updateMural}) => {
 
     const [currentLocation, setCurrentLocation] = useState({lat: 55.86515, lng: -4.25763});
     const [zoom, setZoom] = useState(14);
@@ -13,13 +14,14 @@ const MuralMap = ({murals}) => {
         iconSize: [35, 35]
     });
 
-    const muralMarkers = murals.map((mural, index) => {
+    const muralMarkers = murals.map((popupInfo, index) => {
         return (
             <>
-                <Marker key={index} position={[mural.lat, mural.lng]} title={mural.name} icon={markerIcon} >
+                <Marker key={index} position={[popupInfo.lat, popupInfo.lng]} title={popupInfo.name} icon={markerIcon} >
                     <Popup className='popup'>
                         <Mural
-                            mural={mural} 
+                            mural={popupInfo}
+                            updateMural={updateMural} 
                         />
                     </Popup>
                 </Marker>

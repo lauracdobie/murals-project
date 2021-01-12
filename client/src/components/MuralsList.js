@@ -3,22 +3,22 @@ import MuralMap from './MuralMap';
 
 function MuralsList({murals, updateMural}){
     if (!murals) return null;
+    
+    const displayMurals = murals.map(mural => {
+        let instagram2Link = null;
 
-    const displayMurals = murals.map(mural => 
+        if (mural.instagram2) {
+            instagram2Link = ("https://www.instagram.com/" + mural.instagram2)
+        }
+        return(
         <Mural
         mural={mural}
-        image={mural.imageUrl}
-        name={mural.name}
-        artist={mural.artist}
-        year={mural.year}
-        instagram={mural.instagram}
-        location={mural.location}
-        description={mural.description}
-        likes={mural.likes}
         updateMural={updateMural}
-        />
-        )
-    
+        instagramLink = {"https://www.instagram.com/" + mural.instagram}
+        instagram2Link = {instagram2Link}
+        />)
+    })
+
     const toggleDisplay = () => {
         if (murals.length === 0) {
             console.log("murals", murals)
@@ -31,7 +31,7 @@ function MuralsList({murals, updateMural}){
             <h3>I am the murals list</h3>
             {toggleDisplay()}
             {displayMurals}
-            <MuralMap murals={murals}/>
+            <MuralMap murals={murals} updateMural={updateMural}/>
         </>
     )
 }
