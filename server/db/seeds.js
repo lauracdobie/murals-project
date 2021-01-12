@@ -190,6 +190,44 @@ db.murals.insertMany([
         likes: 0
     },
     {
+        name: "The Portrait Gallery",
+        artist: "Klingatron",
+        instagram: "jamesklinge_art",
+        location: "Midland Street",
+        description: "New portraits from James Klinge providing bold statements of colour within the industrial landscape.",
+        year: 2019,
+        lat: 55.85958610239129, 
+        lng: -4.262429137142516,
+        imageUrl: "./static/portrait_gallery.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        instagram2: "",
+        location: "",
+        description: "",
+        year: 201,
+        lat:
+        lng:
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        instagram2: "",
+        location: "",
+        description: "",
+        year: 201,
+        lat:
+        lng:
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
         name: "",
         artist: "",
         instagram: "",
