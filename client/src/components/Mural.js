@@ -4,7 +4,7 @@ import DrConnolly from "../assets/dr_connolly.jpg"
 import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
 import {useState} from 'react';
 
-function Mural ({mural, updateMural}){
+function Mural ({mural, updateMural, instagramLink}){
     const [likeButtonText, setLikeButtonText] = useState("♥️");
     if (!mural) return null;
     
@@ -60,7 +60,7 @@ function Mural ({mural, updateMural}){
             <h3>{mural.name}</h3>
             <p>{mural.artist}</p>
             <p>{mural.year}</p>
-            <p>Instagram: @{mural.instagram}</p>
+            <p>Instagram: <a href={instagramLink}>{mural.instagram}</a></p>
             <p>{mural.location}</p>
             <p>{mural.description}</p>
             <p>Likes: {mural.likes}</p>
