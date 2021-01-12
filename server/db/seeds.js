@@ -240,16 +240,16 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        instagram2: "",
-        location: "",
-        description: "",
-        year: 201,
-        lat:
-        lng:
-        imageUrl: "./static/.jpg",
+        name: "Glasgow Panda",
+        artist: "Klingatron and Art Pistol",
+        instagram: "jamesklinge_art",
+        instagram2: "artpistol",
+        location: "Gordon Lane",
+        description: "Glasgow's very own giant panda, born of Klingatron and Art Pistol.",
+        year: 2013,
+        lat: 55.859941270978254, 
+        lng: -4.254933907022948,
+        imageUrl: "./static/glasgow_panda.jpg",
         likes: 0
     },
     {
