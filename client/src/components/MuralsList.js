@@ -24,7 +24,7 @@ function MuralsList({murals, updateMural}){
         <>
             <h3>I am the murals list</h3>
             {displayMurals}
-            <MuralMap murals={murals}/>
+            <MuralMap murals={murals} updateMural={updateMural}/>
         </>
     )
 }

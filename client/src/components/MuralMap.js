@@ -4,7 +4,7 @@ import Mural from './Mural';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const MuralMap = ({murals}) => {
+const MuralMap = ({murals, updateMural}) => {
 
     const [currentLocation, setCurrentLocation] = useState({lat: 55.86515, lng: -4.25763});
     const [zoom, setZoom] = useState(14);
@@ -19,7 +19,8 @@ const MuralMap = ({murals}) => {
                 <Marker key={index} position={[mural.lat, mural.lng]} title={mural.name} icon={markerIcon} >
                     <Popup className='popup'>
                         <Mural
-                            mural={mural} 
+                            mural={mural}
+                            updateMural={updateMural} 
                         />
                     </Popup>
                 </Marker>
