@@ -18,10 +18,18 @@ function MuralsList({murals, updateMural}){
         updateMural={updateMural}
         />
         )
+    
+    const toggleDisplay = () => {
+        if (murals.length === 0) {
+            console.log("murals", murals)
+            return <p>No murals that match your search!</p>
+        }
+    };
 
     return (
         <>
             <h3>I am the murals list</h3>
+            {toggleDisplay()}
             {displayMurals}
             <MuralMap murals={murals}/>
         </>

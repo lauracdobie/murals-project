@@ -1,11 +1,11 @@
-const MuralFilterForm = ( { onUserInput } ) => {
+const MuralFilterForm = ( { onUserInput, onUserSelect} ) => {
   const handleFilterInput = (event) => {
     const userInput = event.target.value;
     onUserInput(userInput);
   };
   const handleFilterSelect = (event) => {
     const userInput = event.target.value;
-    onUserInput(userInput);
+    onUserSelect(userInput);
   };
 
   return (

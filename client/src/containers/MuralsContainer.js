@@ -9,6 +9,7 @@ function MuralsContainer () {
     
     const [murals, setMurals] = useState([]);
     const [filteredMurals, setFilteredMurals] = useState([]);
+    const [muralSelector, setMuralSelector] = useState("");
     useEffect(()=> {
         getMurals() 
         .then((data) => {
@@ -21,9 +22,22 @@ function MuralsContainer () {
 
     const handleUserFilter = (userInput) => {
         const someMurals = murals.filter((currentMural) => {
-            return currentMural.artist.toUpperCase().includes(userInput.toUpperCase());
+            console.log(currentMural)
+            if (muralSelector === "year") {
+                return currentMural[muralSelector] == (userInput);
+            } else {
+                return currentMural[muralSelector].toUpperCase().includes(userInput.toUpperCase());
+            }
+
         });
         setFilteredMurals(someMurals);
+    };
+
+    const handleMuralSelector = (userInput) => {
+        // const selectedFilter = (filter) => {
+        //     return 
+        // }
+        setMuralSelector(userInput);
     };
 
     const updateMural = (updatedMural) => {
@@ -51,7 +65,7 @@ function MuralsContainer () {
         <>
             <h2>I am the murals container </h2>
             <div>
-                <MuralFilterForm onUserInput={handleUserFilter}/>
+                <MuralFilterForm onUserInput={handleUserFilter} onUserSelect={handleMuralSelector}/>
             </div>
             <MuralsList murals={filteredMurals} updateMural={updateMural}/>
         </>
