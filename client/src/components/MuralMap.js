@@ -10,22 +10,16 @@ const MuralMap = ({murals}) => {
     const [zoom, setZoom] = useState(14);
     const markerIcon = L.icon({
         iconUrl: "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png", 
-        iconSize: [35, 35] 
+        iconSize: [35, 35]
     });
 
     const muralMarkers = murals.map((mural, index) => {
         return (
             <>
-                <Marker key={index} position={[mural.lat, mural.lng]} icon={markerIcon} >
-                    <Popup>
+                <Marker key={index} position={[mural.lat, mural.lng]} title={mural.name} icon={markerIcon} >
+                    <Popup className='popup'>
                         <Mural
                             mural={mural} 
-                            name={mural.name}
-                            artist={mural.artist}
-                            year={mural.year}
-                            instagram={mural.instagram}
-                            location={mural.location}
-                            description={mural.description}
                         />
                     </Popup>
                 </Marker>
