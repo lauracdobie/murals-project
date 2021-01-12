@@ -1,4 +1,4 @@
-import CatLady from "../assets/crazy_cat_lady.jpg";
+// import CatLady from "../assets/crazy_cat_lady.jpg";
 import LostGiant from "../assets/lost_giant.jpg"
 import DrConnolly from "../assets/dr_connolly.jpg"
 import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
@@ -12,7 +12,7 @@ function Mural ({mural, updateMural, instagramLink, instagram2Link}){
 
     const getImage = () => {
         if (mural.name === "Crazy Cat Lady") {
-            return muralImage = CatLady;
+            return muralImage = "./static/crazy_cat_lady.jpg"
         }
         else if (mural.name === "The Lost Giant") {
             return muralImage = LostGiant;
