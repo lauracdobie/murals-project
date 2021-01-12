@@ -5,7 +5,7 @@ import PopupInfo from './PopupInfo';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-const MuralMap = ({murals}) => {
+const MuralMap = ({murals, updateMural}) => {
 
     const [currentLocation, setCurrentLocation] = useState({lat: 55.86515, lng: -4.25763});
     const [zoom, setZoom] = useState(14);
@@ -19,8 +19,10 @@ const MuralMap = ({murals}) => {
             <>
                 <Marker key={index} position={[popupInfo.lat, popupInfo.lng]} title={popupInfo.name} icon={markerIcon} >
                     <Popup className='popup'>
-                        <PopupInfo
-                            popupInfo={popupInfo}/>
+                        <Mural
+                            mural={mural}
+                            updateMural={updateMural} 
+                        />
                     </Popup>
                 </Marker>
             </>
