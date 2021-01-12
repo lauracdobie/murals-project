@@ -91,15 +91,15 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        location: "",
-        description: "",
-        year: 2016,
-        lat: ,
-        lng: , 
-        imageUrl: "./static/.jpg",
+        name: "Fellow Glasgow Residents",
+        artist: "Smug",
+        instagram: "smugone",
+        location: "Ingram Street (@NCP)",
+        description: "This piece of art by Smug replaced what was previously a gable end wall with nothing more than peeling paint and graffiti.",
+        year: 2013,
+        lat: 55.85919362187882,
+        lng: -4.244316500947801,
+        imageUrl: "./static/fellow_glasgow.jpg",
         likes: 0
     },
     {
