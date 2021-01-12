@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function TourFilter({tourMuralFilter, murals, setFilteredMurals}) {
+function TourFilter({tourMuralFilter, murals, setFilteredMurals, tourButtonText, setTourButtonText}) {
     const [tourFilterButton, setTourFilterButton] = useState("View my mural tour");
     const handleFilterTour = () => {
         if (tourFilterButton === "View my mural tour") {

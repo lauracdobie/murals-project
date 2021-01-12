@@ -10,6 +10,7 @@ function MuralsContainer () {
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
     const [tourMurals, setTourMurals] = useState([]);
+    // const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list")
     useEffect(()=> {
         getMurals() 
         .then((data) => {
@@ -62,6 +63,9 @@ function MuralsContainer () {
 
     const tourMuralFilter = () => {
         setFilteredMurals(tourMurals);
+        // tourMurals.forEach((mural) => {
+        //     setTourButtonText("Remove mural from my tour list")
+        // });
     }
 
     const updateMural = (updatedMural) => {
@@ -92,9 +96,18 @@ function MuralsContainer () {
                 <MuralFilterForm onUserInput={handleUserFilter} onUserSelect={handleMuralSelector}/>
             </div>
             <div>
-                <TourFilter tourMuralFilter={tourMuralFilter} murals={murals} setFilteredMurals={setFilteredMurals}/>
+                <TourFilter 
+                tourMuralFilter={tourMuralFilter} 
+                murals={murals} 
+                setFilteredMurals={setFilteredMurals}
+                />
             </div>
-            <MuralsList murals={filteredMurals} updateMural={updateMural} addToTour={addToTour} removeFromTour={removeFromTour}/>
+            <MuralsList 
+                murals={filteredMurals} 
+                updateMural={updateMural} 
+                addToTour={addToTour} 
+                removeFromTour={removeFromTour} 
+                />
         </>
     )
 }
