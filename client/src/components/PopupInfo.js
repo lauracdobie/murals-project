@@ -6,28 +6,9 @@ import {useState} from 'react';
 
 import Mural from "./Mural";
 
-function PopupInfo ({popupInfo, updatePopupInfo}){
+function PopupInfo ({murals, popupInfo, instagramLink, instagram2Link}){
     const [likeButtonText, setLikeButtonText] = useState( "♥️");
     if (!popupInfo) return null;
-    
-    // let muralImage = {};
-
-    // const getImage = () => {
-    //     if (popupInfo.name === "Crazy Cat Lady") {
-    //         return muralImage = "./static/crazy_cat_lady.jpg"
-    //     }
-    //     else if (popupInfo.name === "The Lost Giant") {
-    //         return muralImage = LostGiant;
-    //     }
-    //     else if (popupInfo.name === "Dr Connolly, I presume") {
-    //         return muralImage = DrConnolly;
-    //     }
-    //     else if (popupInfo.name === "Shadow Hand Puppets") {
-    //         return muralImage = ShadowHandPuppet;
-    //     }
-    // }
-
-    // getImage();
 
     const handleLike = () => {
         let updatedValue = null;
@@ -40,14 +21,16 @@ function PopupInfo ({popupInfo, updatePopupInfo}){
             setLikeButtonText("♥️");
         }
     }
-
+    
+    const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link}>@{popupInfo.instagram2}</a></p>): null
     return (
         <div className='popup-listing'>
             <img className='mural-pic' src={popupInfo.imageUrl} alt={popupInfo.name}/>
             <h3>{popupInfo.name}</h3>
             <p>{popupInfo.location}</p>
             <p>{popupInfo.artist}, {popupInfo.year}</p>
-            <p>{popupInfo.instagram}</p>
+            <p>Instagram: <a href={instagramLink}>@{popupInfo.instagram}</a></p>
+            {instagram2Node}
             <button onClick={handleLike}>{likeButtonText}</button>
         </div>
     )

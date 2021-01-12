@@ -1,9 +1,7 @@
 import {getMurals, updateDbMural} from './MuralsService';
 import {useEffect, useState} from 'react';
 import MuralsList from '../components/MuralsList';
-import MuralMap from '../components/MuralMap';
 import MuralFilterForm from '../components/MuralFilterForm';
-import Mural from '../components/Mural';
 
 function MuralsContainer () {
     

@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import { Popup, MapContainer as Map, TileLayer, Marker } from 'react-leaflet';
-import Mural from './Mural';
 import PopupInfo from './PopupInfo';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -15,13 +14,22 @@ const MuralMap = ({murals, updateMural}) => {
     });
 
     const muralMarkers = murals.map((popupInfo, index) => {
+        let instagram2Link = null;
+
+        if (popupInfo.instagram2) {
+            instagram2Link = ("https://www.instagram.com/" + popupInfo.instagram2)
+        }
+
         return (
             <>
                 <Marker key={index} position={[popupInfo.lat, popupInfo.lng]} title={popupInfo.name} icon={markerIcon} >
                     <Popup className='popup'>
                         <PopupInfo
+                            murals={murals}
                             popupInfo={popupInfo}
-                            updateMural={updateMural} 
+                            updateMural={updateMural}
+                            instagramLink = {"https://www.instagram.com/" + popupInfo.instagram}
+                            instagram2Link = {instagram2Link} 
                         />
                     </Popup>
                 </Marker>
