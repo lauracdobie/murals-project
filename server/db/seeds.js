@@ -253,16 +253,17 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        instagram2: "",
-        location: "",
-        description: "",
-        year: 201,
-        lat:
-        lng:
-        imageUrl: "./static/.jpg",
+        name: "Are ye Dancin?",
+        artist: "Conzo & Globel and Art Pistol",
+        instagram: "conzothrob",
+        instagram2: "ciaranglobel",
+        instagram3: "artpistol",
+        location: "Argyle Street",
+        description: "Uniquely identifiable mural within the scope of the City Centre Mural Trail - quirky and imaginative.",
+        year: 2017,
+        lat: 55.85806777285367, 
+        lng: -4.25401775843302,
+        imageUrl: "./static/are_ye_dancin.jpg",
         likes: 0
     },
     {
