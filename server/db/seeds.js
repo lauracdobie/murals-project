@@ -116,15 +116,15 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        location: "",
-        description: "",
-        year: 2016,
-        lat: ,
-        lng: , 
-        imageUrl: "./static/.jpg",
+        name: "Space Man",
+        artist: "Ali Wylie and Recoat",
+        instagram: "recoat",
+        location: "New Wynd",
+        description: "Bringing some vibrant colours to the city centre lane.",
+        year: 2014,
+        lat: 55.8570190573762, 
+        lng: -4.247197529783755,
+        imageUrl: "./static/space_man.jpg",
         likes: 0
     },
     {
