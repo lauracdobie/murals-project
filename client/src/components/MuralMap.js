@@ -13,16 +13,13 @@ const MuralMap = ({murals}) => {
         iconSize: [35, 35] 
     });
 
-    const getLatLng = murals.map(mural => {
-        return [mural.lat, mural.lng]
-    })
-
     const muralMarkers = murals.map((mural, index) => {
         return (
             <>
                 <Marker key={index} position={[mural.lat, mural.lng]} icon={markerIcon} >
                     <Popup>
-                        <Mural 
+                        <Mural
+                            mural={mural} 
                             name={mural.name}
                             artist={mural.artist}
                             year={mural.year}

@@ -6,8 +6,10 @@ import {useState} from 'react';
 
 function Mural ({mural, updateMural}){
     const [likeButtonText, setLikeButtonText] = useState("Like 👍");
+    if (!mural) return null;
+    
+    let muralImage = {};
 
-    let muralImage = null;
     const getImage = () => {
         if (mural.name === "Crazy Cat Lady") {
             return muralImage = CatLady;
