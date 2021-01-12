@@ -78,4 +78,64 @@ db.murals.insertMany([
         imageUrl: "./static/saint_mungo.jpg",
         likes: 0
     },
+    {
+        name: "Saint Enoch",
+        artist: "Smug",
+        instagram: "smugone",
+        location: "George Street",
+        description: "Following his extremely success St. Mungo, he created what would be considered a companion piece.",
+        year: 2016,
+        lat: 55.86042851109628,
+        lng: -4.24063450520772,
+        imageUrl: "./static/saint_enoch.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        location: "",
+        description: "",
+        year: 2016,
+        lat: ,
+        lng: , 
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        location: "",
+        description: "",
+        year: 2016,
+        lat: ,
+        lng: , 
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        location: "",
+        description: "",
+        year: 2016,
+        lat: ,
+        lng: , 
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        location: "",
+        description: "",
+        year: 2016,
+        lat: ,
+        lng: , 
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
 ]);
