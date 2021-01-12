@@ -92,7 +92,7 @@ function MuralsContainer () {
                 <MuralFilterForm onUserInput={handleUserFilter} onUserSelect={handleMuralSelector}/>
             </div>
             <div>
-                <TourFilter tourMuralFilter={tourMuralFilter}/>
+                <TourFilter tourMuralFilter={tourMuralFilter} murals={murals} setFilteredMurals={setFilteredMurals}/>
             </div>
             <MuralsList murals={filteredMurals} updateMural={updateMural} addToTour={addToTour} removeFromTour={removeFromTour}/>
         </>

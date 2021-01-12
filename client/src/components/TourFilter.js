@@ -1,10 +1,21 @@
-function TourFilter({tourMuralFilter}) {
+import { useState } from "react";
+
+function TourFilter({tourMuralFilter, murals, setFilteredMurals}) {
+    const [tourFilterButton, setTourFilterButton] = useState("View my mural tour");
     const handleFilterTour = () => {
-        tourMuralFilter();
+        if (tourFilterButton === "View my mural tour") {
+            tourMuralFilter();
+            setTourFilterButton("View all murals")
+        }
+        else {
+            setFilteredMurals(murals);
+            setTourFilterButton("View my mural tour");
+        }
+
     }
 
     return (
-        <button onClick={handleFilterTour}>View my mural tour</button>
+        <button onClick={handleFilterTour}>{tourFilterButton}</button>
     )
 }
 export default TourFilter;
