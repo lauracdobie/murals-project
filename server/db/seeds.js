@@ -51,5 +51,19 @@ db.murals.insertMany([
         lng: -4.2600252186499565,
         imageUrl: "./static/shadow_hand_puppets.jpg",
         likes: 0
-    }
+    },
+    {
+        name: "Strathclyde University",
+        artist: "Art Pistol, Rogue One and Ejek",
+        instagram: "artpistol",
+        instagram2: "rogueoner",
+        instagram3: "ejek98",
+        location: "George Street",
+        description: "This piece of street art celebrates the people of the University of Strathclyde and their many achievements.",
+        year: 2014,
+        lat: 55.861397639899046, 
+        lng: -4.2424881878469325, 
+        imageUrl: "./static/strathclyde_university.jpg",
+        likes: 0
+    },
 ]);
