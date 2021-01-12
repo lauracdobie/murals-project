@@ -103,15 +103,16 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        location: "",
-        description: "",
-        year: 2016,
-        lat: ,
-        lng: , 
-        imageUrl: "./static/.jpg",
+        name: "Badminton",
+        artist: "Guido Van Helten and Art Pistol",
+        instagram: "guidovanhelten",
+        instagram2: "artpistol",
+        location: "Wilson Street",
+        description: "Installed as a part of a promotional campaign for the 2014 Commonwealth games. This mural is part of a collection of murals representing various sports within the games.",
+        year: 2014,
+        lat: 55.85851689610548,
+        lng: -4.246794800081792,
+        imageUrl: "./static/badminton.jpg",
         likes: 0
     },
     {
