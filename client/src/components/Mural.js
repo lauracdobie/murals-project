@@ -2,8 +2,10 @@ import CatLady from "../assets/crazy_cat_lady.jpg";
 import LostGiant from "../assets/lost_giant.jpg"
 import DrConnolly from "../assets/dr_connolly.jpg"
 import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
+import {useState} from 'react';
 
 function Mural ({mural, updateMural}){
+    const [likeButtonText, setLikeButtonText] = useState("Like 👍");
 
     let muralImage = null;
     const getImage = () => {
@@ -24,6 +26,16 @@ function Mural ({mural, updateMural}){
     getImage();
 
     const handleLike = () => {
+        let updatedValue = null;
+        if (likeButtonText === "Like 👍") {
+            updatedValue = mural.likes += 1;
+            setLikeButtonText("Unlike 👎");
+        }
+        else {
+            updatedValue = mural.likes -= 1;
+            setLikeButtonText("Like 👍");
+        }
+        
         updateMural({
             _id: mural._id,
             name: mural.name,
@@ -35,7 +47,7 @@ function Mural ({mural, updateMural}){
             lat: mural.lat,
             lng: mural.lng,
             imageURL: mural.imageUrL,
-            likes: mural.likes += 1
+            likes: updatedValue
         })
 
     }
@@ -50,7 +62,7 @@ function Mural ({mural, updateMural}){
             <p>{mural.location}</p>
             <p>{mural.description}</p>
             <p>Likes: {mural.likes}</p>
-            <button onClick={handleLike}>Like</button>
+            <button onClick={handleLike}>{likeButtonText}</button>
         </div>
     )
 }
