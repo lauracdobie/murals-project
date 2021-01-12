@@ -227,6 +227,45 @@ db.murals.insertMany([
         likes: 0
     },
     {
+        name: "Wind Power",
+        artist: "Rogue and Art Pistol",
+        instagram: "rogueoner",
+        instagram2: "artpistol",
+        location: "Mitchell Street",
+        description: "Intriguing piece by Rogue and Art Pistol, celebrating the diverse sustainable energy sources that Scotland has built.",
+        year: 2015,
+        lat: 55.859584420288236, 
+        lng: -4.25591369774255,
+        imageUrl: "./static/wind_power.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        instagram2: "",
+        location: "",
+        description: "",
+        year: 201,
+        lat:
+        lng:
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        instagram2: "",
+        location: "",
+        description: "",
+        year: 201,
+        lat:
+        lng:
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
         name: "",
         artist: "",
         instagram: "",
