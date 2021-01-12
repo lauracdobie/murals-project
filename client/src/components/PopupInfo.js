@@ -1,31 +1,33 @@
 // import CatLady from "../assets/crazy_cat_lady.jpg";
-import LostGiant from "../assets/lost_giant.jpg"
-import DrConnolly from "../assets/dr_connolly.jpg"
-import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
+// import LostGiant from "../assets/lost_giant.jpg"
+// import DrConnolly from "../assets/dr_connolly.jpg"
+// import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
 import {useState} from 'react';
+
+import Mural from "./Mural";
 
 function PopupInfo ({popupInfo, updatePopupInfo}){
     const [likeButtonText, setLikeButtonText] = useState( "♥️");
     if (!popupInfo) return null;
     
-    let muralImage = {};
+    // let muralImage = {};
 
-    const getImage = () => {
-        if (popupInfo.name === "Crazy Cat Lady") {
-            return muralImage = "./static/crazy_cat_lady.jpg"
-        }
-        else if (popupInfo.name === "The Lost Giant") {
-            return muralImage = LostGiant;
-        }
-        else if (popupInfo.name === "Dr Connolly, I presume") {
-            return muralImage = DrConnolly;
-        }
-        else if (popupInfo.name === "Shadow Hand Puppets") {
-            return muralImage = ShadowHandPuppet;
-        }
-    }
+    // const getImage = () => {
+    //     if (popupInfo.name === "Crazy Cat Lady") {
+    //         return muralImage = "./static/crazy_cat_lady.jpg"
+    //     }
+    //     else if (popupInfo.name === "The Lost Giant") {
+    //         return muralImage = LostGiant;
+    //     }
+    //     else if (popupInfo.name === "Dr Connolly, I presume") {
+    //         return muralImage = DrConnolly;
+    //     }
+    //     else if (popupInfo.name === "Shadow Hand Puppets") {
+    //         return muralImage = ShadowHandPuppet;
+    //     }
+    // }
 
-    getImage();
+    // getImage();
 
     const handleLike = () => {
         let updatedValue = null;
@@ -41,7 +43,7 @@ function PopupInfo ({popupInfo, updatePopupInfo}){
 
     return (
         <div className='popup-listing'>
-            <img className='mural-pic' src={muralImage} alt={popupInfo.name}/>
+            <img className='mural-pic' src={popupInfo.imageUrl} alt={popupInfo.name}/>
             <h3>{popupInfo.name}</h3>
             <p>{popupInfo.location}</p>
             <p>{popupInfo.artist}, {popupInfo.year}</p>

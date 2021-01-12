@@ -12,6 +12,7 @@ function MuralsList({murals, updateMural}){
         }
         return(
         <Mural
+        murals={murals}
         mural={mural}
         updateMural={updateMural}
         instagramLink = {"https://www.instagram.com/" + mural.instagram}

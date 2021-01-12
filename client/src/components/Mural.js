@@ -1,31 +1,8 @@
-// import CatLady from "../assets/crazy_cat_lady.jpg";
-import LostGiant from "../assets/lost_giant.jpg"
-import DrConnolly from "../assets/dr_connolly.jpg"
-import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
 import {useState} from 'react';
 
-function Mural ({mural, updateMural, instagramLink, instagram2Link}){
+function Mural ({murals, mural, updateMural, instagramLink, instagram2Link}){
     const [likeButtonText, setLikeButtonText] = useState("♥️");
     if (!mural) return null;
-    
-    let muralImage = {};
-
-    const getImage = () => {
-        if (mural.name === "Crazy Cat Lady") {
-            return muralImage = "./static/crazy_cat_lady.jpg"
-        }
-        else if (mural.name === "The Lost Giant") {
-            return muralImage = LostGiant;
-        }
-        else if (mural.name === "Dr Connolly, I presume") {
-            return muralImage = DrConnolly;
-        }
-        else if (mural.name === "Shadow Hand Puppets") {
-            return muralImage = ShadowHandPuppet;
-        }
-    }
-
-    getImage();
 
     const handleLike = () => {
         let updatedValue = null;
@@ -56,7 +33,7 @@ function Mural ({mural, updateMural, instagramLink, instagram2Link}){
     const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link}>@{mural.instagram2}</a></p>): null
     return (
         <div className='mural-listing'>
-            <img className='mural-pic' src={muralImage} alt={mural.name}/>
+            <img className='mural-pic' src={mural.imageUrl} alt={mural.name}/>
             <h3>{mural.name}</h3>
             <p>{mural.artist}</p>
             <p>{mural.year}</p>
