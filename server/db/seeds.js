@@ -165,16 +165,15 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        instagram2: "",
-        location: "",
-        description: "",
-        year: 201,
-        lat:
-        lng:
-        imageUrl: "./static/.jpg",
+        name: "Mackintosh",
+        artist: "Smug",
+        instagram: "smugone",
+        location: "Clutha",
+        description: "Directly above the Clutha, this mural pays homage to one of Glasgow's most famous sons, Charles Rennie.",
+        year: 2016,
+        lat: 55.85446426608605, 
+        lng: -4.249790885604259,
+        imageUrl: "./static/mackintosh.jpg",
         likes: 0
     },
     {
