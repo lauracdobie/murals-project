@@ -202,16 +202,16 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        instagram2: "",
-        location: "",
-        description: "",
-        year: 201,
-        lat:
-        lng:
-        imageUrl: "./static/.jpg",
+        name: "The Worlds Most Economical Taxi",
+        artist: "Rogue and Art Pistol",
+        instagram: "rogueoner",
+        instagram2: "artpistol",
+        location: "5 Mitchell Street",
+        description: "Have you ever seen a taxi float! This mural is considered a must-visit.",
+        year: 2013,
+        lat: 55.85858893058056,
+        lng: -4.2558412837527575,
+        imageUrl: "./static/taxi.jpg",
         likes: 0
     },
     {
