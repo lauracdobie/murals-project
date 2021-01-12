@@ -2,18 +2,29 @@ import {getMurals, updateDbMural} from './MuralsService';
 import {useEffect, useState} from 'react';
 import MuralsList from '../components/MuralsList';
 import MuralMap from '../components/MuralMap';
+import MuralFilterForm from '../components/MuralFilterForm';
+import Mural from '../components/Mural';
 
 function MuralsContainer () {
     
     const [murals, setMurals] = useState([]);
+    const [filteredMurals, setFilteredMurals] = useState([]);
     useEffect(()=> {
         getMurals() 
         .then((data) => {
             console.log(data)
             setMurals(data)
+            setFilteredMurals(data)
         })
 
     }, [])
+
+    const handleUserFilter = (userInput) => {
+        const someMurals = murals.filter((currentMural) => {
+            return currentMural.artist.toUpperCase().includes(userInput.toUpperCase());
+        });
+        setFilteredMurals(someMurals);
+    };
 
     const updateMural = (updatedMural) => {
         //Updates mural document in database collection
@@ -39,7 +50,10 @@ function MuralsContainer () {
 
         <>
             <h2>I am the murals container </h2>
-            <MuralsList murals={murals} updateMural={updateMural}/>
+            <div>
+                <MuralFilterForm onUserInput={handleUserFilter}/>
+            </div>
+            <MuralsList murals={filteredMurals} updateMural={updateMural}/>
         </>
     )
 }
