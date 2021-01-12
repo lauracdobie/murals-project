@@ -140,4 +140,55 @@ db.murals.insertMany([
         imageUrl: "./static/billy_connolly.jpg",
         likes: 0
     },
+    {
+        name: "Woman in Black",
+        artist: "Klingatron",
+        instagram: "jamesklinge_art",
+        location: "Bridgegate Path",
+        description: "James Klinge created to create this mural with a specific focus on detail through distinctive use of intricate stencil techniques.",
+        year: 2017,
+        lat: 55.85497534234021,
+        lng: -4.245830972111935,
+        imageUrl: "./static/woman_in_black.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        instagram2: "",
+        location: "",
+        description: "",
+        year: 201,
+        lat:
+        lng:
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        instagram2: "",
+        location: "",
+        description: "",
+        year: 201,
+        lat:
+        lng:
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
+    {
+        name: "",
+        artist: "",
+        instagram: "",
+        instagram2: "",
+        location: "",
+        description: "",
+        year: 201,
+        lat:
+        lng:
+        imageUrl: "./static/.jpg",
+        likes: 0
+    },
 ]);
