@@ -67,8 +67,8 @@
 }
 
 .visited-button {
-  height: fit-content;
-  width: fit-content;
+  height: 40px;
+  width: 60px;
   margin-left: 5px;
   border-radius: 25%;
   border: solid #767676 2px;
@@ -93,8 +93,9 @@
 .visited {
   border-top: solid grey 2px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
   justify-content: space-between;
   background-color: lightgrey;
+  margin: 0px 20px;
 }
