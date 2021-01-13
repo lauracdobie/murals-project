@@ -15,7 +15,7 @@ const MuralFilterForm = ( { onUserInput, onUserSelect} ) => {
       <span className="mural-filter-title">Filter </span>
       <select onChange={handleFilterSelect} name="mural-search-type" id="mural-filter-select">
         <option value="">Choose a filter</option>
-        <option value="name">Name</option>
+        <option value="name">Mural Title</option>
         <option value="artist">Artist</option>
         <option value="year">Year</option>
       </select>

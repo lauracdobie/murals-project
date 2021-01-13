@@ -26,9 +26,11 @@ function MuralsContainer () {
                 if (currentMural.hasOwnProperty("year")) {
                     return currentMural[muralSelector].toString().toUpperCase().includes(userInput.toUpperCase());
                 }
+            } else if (muralSelector === "") {
+                return;
             } else {
                 return currentMural[muralSelector].toUpperCase().includes(userInput.toUpperCase());
-            }
+            };
 
         });
         setFilteredMurals(someMurals);

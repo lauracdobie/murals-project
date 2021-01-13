@@ -7,7 +7,7 @@ import 'leaflet/dist/leaflet.css';
 
 const MuralMap = ({murals, updateMural}) => {
 
-    const [currentLocation, setCurrentLocation] = useState({lat: 55.86515, lng: -4.25763});
+    const [currentLocation, setCurrentLocation] = useState({lat: 55.86055888768373, lng: -4.252775170739765});
     const [zoom, setZoom] = useState(14);
     const markerIcon = L.icon({
         iconUrl: "https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png", 
