@@ -47,8 +47,8 @@ function MuralsContainer () {
     };
 
     const addToTour = (newTourMural) => {
-        const muralToAdd = murals.find(mural => mural._id === newTourMural._id);
-        setTourMurals([...tourMurals, muralToAdd])
+        newTourMural.addedToTour = true;
+        setTourMurals([...tourMurals, newTourMural])
         console.log(tourMurals);
     }
 

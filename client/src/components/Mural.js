@@ -32,20 +32,38 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, addT
 
     }
     const handleAddToTour = () => {
-        if (tourButtonText === "Add mural to my tour list") {
             addToTour(mural);
-            setTourButtonText("Remove mural from my tour list");
         }
-        else {
-            removeFromTour(mural);
-            setTourButtonText("Add mural to my tour list");
-        }
+    const handleRemoveFromTour = () => {
+        removeFromTour(mural);
     }
+    
+    const handleRenderButtons = () => {
+        // If the tour has addedToTour property and it's set to true
+        // Render the remove button as enabled and the add button as disabled
+        if (mural.addedToTour) {
+            return (
+            <>    
+            <button onClick={handleAddToTour} disabled={true}>Add to tour</button>
+            <button onClick={handleRemoveFromTour}>Remove from tour</button>
+            </>
+            )
+        }
+        return (
+            <>    
+            <button onClick={handleAddToTour} disabled={false}>Add to tour</button>
+            <button onClick={handleRemoveFromTour} disabled={true}>Remove from tour</button>
+            </>)
+
+    }
+            
+    
     const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link} target="_blank">@{mural.instagram2}</a></p>): null
     return (
         <div className='mural-listing'>
             <img className='mural-pic' src={mural.imageUrl} alt={mural.name}/>
-            <h3>{mural.name} <button onClick={handleAddToTour}>{tourButtonText}</button></h3>
+            <h3>{mural.name}</h3>
+            {handleRenderButtons()}
             <p>{mural.artist}</p>
             <p>{mural.year}</p>
             <p>Instagram: <a href={instagramLink} target="_blank">@{mural.instagram}</a></p>

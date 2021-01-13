@@ -1,7 +1,7 @@
 import Mural from './Mural';
 import MuralMap from './MuralMap';
 
-function MuralsList({murals, updateMural, addToTour, removeFromTour, tourButtonText, setTourButtonText}){
+function MuralsList({murals, updateMural, addToTour, removeFromTour}){
     if (!murals) return null;
     
     const displayMurals = murals.map(mural => {
@@ -19,8 +19,6 @@ function MuralsList({murals, updateMural, addToTour, removeFromTour, tourButtonT
         instagram2Link = {instagram2Link}
         addToTour={addToTour}
         removeFromTour={removeFromTour}
-        tourButtonText={tourButtonText}
-        setTourButtonText={setTourButtonText}
         />)
     })
 
