@@ -53,18 +53,20 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
             <div className="mural-text">
                 <div className="mural-title">
                     <h3>{mural.name}</h3>
-                    <div className="mural-buttons">
-                        <div className="likes-section">
-                            <button className="like-button" onClick={handleLike}>{likeButtonText}</button>
-                            <p className="likes-number">{mural.likes}</p>
-                        </div>
-                        <button className="visited-button" onClick={handleVisited}>{visitedButtonText}</button>
-                    </div>
                 </div>
-                <p>{mural.artist}, {mural.year}</p>
-                <p><a href={instagramLink}>@{mural.instagram}</a> {instagram2Node} {instagram3Node} </p>
-                <p>{mural.location}</p>
-                <p className="mural-description">{mural.description}</p>
+                <div>
+                    <p>{mural.artist}, {mural.year}</p>
+                    <p><a href={instagramLink}>@{mural.instagram}</a> {instagram2Node} {instagram3Node} </p>
+                    <p>{mural.location}</p>
+                    <p className="mural-description">{mural.description}</p>
+                </div>
+            </div>
+            <div className="mural-buttons">
+                <div className="likes-section">
+                        <button className="like-button" onClick={handleLike}>{likeButtonText}</button>
+                        <p className="likes-number">{mural.likes}</p>
+                    </div>
+                    <button className="visited-button" onClick={handleVisited}>{visitedButtonText}</button>
             </div>
         </div>
     )

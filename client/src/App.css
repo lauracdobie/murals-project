@@ -19,7 +19,7 @@
 }
 
 .leaflet-container {
-  height: 600px;
+  height: 100vh;
   min-width: 600px;
 }
 
@@ -38,4 +38,5 @@
 
 .mural-map {
   width: 100%;
+  height: 100vh;
 }

@@ -3,3 +3,8 @@
   flex-direction: row;
 }
 
+.display-murals {
+  height: 100vh;
+  overflow: scroll;
+  min-width: 500px;
+}

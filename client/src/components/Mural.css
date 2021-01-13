@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  justify-content: space-between;
 }
 
 .mural-text {
@@ -23,6 +24,7 @@
 .mural-buttons {
   display: flex;
   flex-flow: row nowrap;
+  align-self: flex-start;
 }
 
 .likes-section {
