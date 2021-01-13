@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function PopupInfo ({murals, popupInfo}){
+function PopupInfo ({murals, popupInfo, mural, name, artist, location, instagram, year, image}){
     const [likeButtonText, setLikeButtonText] = useState( "♥️");
     if (!popupInfo) return null;
     
@@ -33,8 +33,6 @@ function PopupInfo ({murals, popupInfo}){
             </div>
         )
     })
-        
-    return
 
     
 }
