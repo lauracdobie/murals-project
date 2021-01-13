@@ -32,9 +32,9 @@ function PopupInfo ({murals, popupInfo}){
                 {instagram3Node}
             </div>
         )
-        })
+    })
         
-    
+    return
 
     
 }

@@ -14,15 +14,16 @@ const MuralMap = ({murals, updateMural}) => {
         iconSize: [35, 35]
     });
 
-    const muralMarkers = murals.map((popupInfo, index) => {
+    const muralMarkers = murals.map((mural, index) => {
         return (
             <>
-                <Marker key={index} position={[popupInfo.lat, popupInfo.lng]} title={popupInfo.name} icon={markerIcon} >
-                    <Popup className='popup'>
+                <Marker key={index} position={[mural.lat, mural.lng]} title={mural.name} icon={markerIcon} mural={mural}>
+                    <Popup className='popup' mural={mural}>
                         <PopupInfo
-                            popupInfo={popupInfo}
+                            // popupInfo={popupInfo}
                             updateMural={updateMural}
-                            murals={murals} 
+                            murals={murals}
+                            mural={mural} 
                         />
                     </Popup>
                 </Marker>
