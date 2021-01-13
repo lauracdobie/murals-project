@@ -1,55 +1,42 @@
-// import CatLady from "../assets/crazy_cat_lady.jpg";
-// import LostGiant from "../assets/lost_giant.jpg"
-// import DrConnolly from "../assets/dr_connolly.jpg"
-// import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
 import {useState} from 'react';
 
-import Mural from "./Mural";
-
-function PopupInfo ({popupInfo, updatePopupInfo}){
+function PopupInfo ({murals, popupInfo}){
     const [likeButtonText, setLikeButtonText] = useState( "♥️");
     if (!popupInfo) return null;
     
-    // let muralImage = {};
+    murals.map(mural => {
+        let instagram2Link = null;
+        let instagram3Link = null;
+        // let instagram2Node = null;
+        // let instagram3Node = null;
 
-    // const getImage = () => {
-    //     if (popupInfo.name === "Crazy Cat Lady") {
-    //         return muralImage = "./static/crazy_cat_lady.jpg"
-    //     }
-    //     else if (popupInfo.name === "The Lost Giant") {
-    //         return muralImage = LostGiant;
-    //     }
-    //     else if (popupInfo.name === "Dr Connolly, I presume") {
-    //         return muralImage = DrConnolly;
-    //     }
-    //     else if (popupInfo.name === "Shadow Hand Puppets") {
-    //         return muralImage = ShadowHandPuppet;
-    //     }
-    // }
-
-    // getImage();
-
-    const handleLike = () => {
-        let updatedValue = null;
-        if (likeButtonText === "♥️") {
-            updatedValue = popupInfo.likes += 1;
-            setLikeButtonText("♡");
+        if (mural.instagram2) {
+            instagram2Link = ("https://www.instagram.com/" + mural.instagram2)
         }
-        else {
-            updatedValue = popupInfo.likes -= 1;
-            setLikeButtonText("♥️");
-        }
-    }
 
-    return (
-        <div className='popup-listing'>
-            <img className='mural-pic' src={popupInfo.imageUrl} alt={popupInfo.name}/>
-            <h3>{popupInfo.name}</h3>
-            <p>{popupInfo.location}</p>
-            <p>{popupInfo.artist}, {popupInfo.year}</p>
-            <p>{popupInfo.instagram}</p>
-        </div>
-    )
+        if (mural.instagram3) {
+            instagram3Link = ("https://www.instagram.com/" + mural.instagram3)
+        }
+
+        const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link}>@{mural.instagram2}</a></p>): null;
+        const instagram3Node = instagram3Link ? (<p>Instagram: <a href={instagram3Link}>@{mural.instagram3}</a></p>): null;
+
+        return (
+            <div className='popup-listing'>
+                <img className='mural-pic' src={mural.imageUrl} alt={mural.name}/>
+                <h3>{mural.name}</h3>
+                <p>{mural.location}</p>
+                <p>{mural.artist}, {mural.year}</p>
+                <p>{mural.instagram}</p>
+                {instagram2Node}
+                {instagram3Node}
+            </div>
+        )
+        })
+        
+    
+
+    
 }
 
 export default PopupInfo;

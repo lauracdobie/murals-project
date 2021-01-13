@@ -21,7 +21,8 @@ const MuralMap = ({murals, updateMural}) => {
                     <Popup className='popup'>
                         <PopupInfo
                             popupInfo={popupInfo}
-                            updateMural={updateMural} 
+                            updateMural={updateMural}
+                            murals={murals} 
                         />
                     </Popup>
                 </Marker>
