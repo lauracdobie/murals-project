@@ -6,10 +6,16 @@ function MuralsList({murals, updateMural}){
     
     const displayMurals = murals.map(mural => {
         let instagram2Link = null;
+        let instagram3Link = null;
 
         if (mural.instagram2) {
             instagram2Link = ("https://www.instagram.com/" + mural.instagram2)
         }
+
+        if (mural.instagram3) {
+            instagram3Link = ("https://www.instagram.com/" + mural.instagram3)
+        }
+
         return(
         <Mural
         murals={murals}
@@ -17,6 +23,7 @@ function MuralsList({murals, updateMural}){
         updateMural={updateMural}
         instagramLink = {"https://www.instagram.com/" + mural.instagram}
         instagram2Link = {instagram2Link}
+        instagram3Link = {instagram3Link}
         />)
     })
 
@@ -32,7 +39,10 @@ function MuralsList({murals, updateMural}){
             <h3>I am the murals list</h3>
             {toggleDisplay()}
             {displayMurals}
-            <MuralMap murals={murals} updateMural={updateMural}/>
+            <MuralMap 
+                murals={murals} 
+                updateMural={updateMural}
+                />
         </>
     )
 }

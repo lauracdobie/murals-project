@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-function Mural ({murals, mural, updateMural, instagramLink, instagram2Link}){
+function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link}){
     const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
 
     const [likeButtonText, setLikeButtonText] = useState("♥️");
@@ -41,7 +41,9 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link}){
             setVisitedButtonText("Not Visited");
     }}
 
-    const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link}>@{mural.instagram2}</a></p>): null
+    const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link}>@{mural.instagram2}</a></p>): null;
+    const instagram3Node = instagram3Link ? (<p>Instagram: <a href={instagram3Link}>@{mural.instagram3}</a></p>): null;
+
     return (
         <div className='mural-listing'>
             <img className='mural-pic' src={mural.imageUrl} alt={mural.name}/>
@@ -50,6 +52,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link}){
             <p>{mural.year}</p>
             <p>Instagram: <a href={instagramLink}>@{mural.instagram}</a></p>
             {instagram2Node}
+            {instagram3Node}
             <p>{mural.location}</p>
             <p>{mural.description}</p>
             <p>Likes: {mural.likes}</p>
