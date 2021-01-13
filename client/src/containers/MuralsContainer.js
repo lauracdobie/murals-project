@@ -24,23 +24,36 @@ function MuralsContainer () {
         })
     }, [])
 
+    filteredMurals.forEach(mural => mural.isLiked = false);
+
     const onLike = (mural) => {
         let updatedValue = null;
-        if (likeButtonText === Unliked) {
+        if (mural.isLiked === false) {
             updatedValue = mural.likes += 1;
-            setLikeButtonText(Liked);
+            // setLikeButtonText(Liked);
             mural.isLiked = true;
+            console.log("liked mural")
+            console.log(mural);
             let updatedList = [...filteredMurals, mural]
             setFilteredMurals(updatedList);
         }
 
-        else {
+        else if (mural.liked === true) {
             updatedValue = mural.likes -= 1;
-            setLikeButtonText(Unliked);
+            // setLikeButtonText(Unliked);
             mural.isLiked = false;
             let updatedList = [...filteredMurals, mural]
             setFilteredMurals(updatedList);
         }
+
+        filteredMurals.forEach((mural) => {
+            if (mural.isLiked === true) {
+                setLikeButtonText(Unliked);
+            } 
+            else {
+                setLikeButtonText(Liked);
+            }
+        })
                          
         updateMural({
             _id: mural._id,
