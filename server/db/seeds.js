@@ -267,16 +267,15 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "",
-        artist: "",
-        instagram: "",
-        instagram2: "",
-        location: "",
-        description: "",
-        year: 201,
-        lat:
-        lng:
-        imageUrl: "./static/.jpg",
+        name: "Study of a Woman in Black 3",
+        artist: "Klingatron",
+        instagram: "jamesklinge_art",
+        location: "Royal Exchange Square",
+        description: "Another mural by Klinge with a specific focus on detail through distinctive use of intricate stencil techniques.",
+        year: 2019,
+        lat: 55.86055888768373,
+        lng:  -4.252775170739765,
+        imageUrl: "./static/woman_in_black3.jpg",
         likes: 0
-    },
+    }
 ]);
