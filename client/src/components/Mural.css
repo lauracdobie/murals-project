@@ -76,6 +76,7 @@
 }
 
 .mural-description {
+  width: 400px;
 }
 
 .likes-heart {
@@ -97,4 +98,16 @@
   padding: 20px;
   justify-content: space-between;
   background-color: lightgrey;
+}
+
+.insta-icon {
+  width: 20px;
+  height: 20px;
+  padding-right: 5px;
+}
+
+.insta-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

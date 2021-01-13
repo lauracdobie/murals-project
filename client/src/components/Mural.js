@@ -2,6 +2,7 @@ import {useState} from 'react';
 import './Mural.css';
 import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
+import InstagramIcon from '../assets/instagram.png';
 
 function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link}){
     const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
@@ -63,7 +64,10 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
                 </div>
                 <div>
                     <p>{mural.artist}, {mural.year}</p>
-                    <p><a href={instagramLink}>@{mural.instagram}</a> {instagram2Node} {instagram3Node} </p>
+                    <div className="insta-section">
+                        <img className="insta-icon" src={InstagramIcon} />
+                        <p><a href={instagramLink}>@{mural.instagram}</a> {instagram2Node} {instagram3Node} </p>
+                    </div>
                     <p>{mural.location}</p>
                     <p className="mural-description">{mural.description}</p>
                 </div>
