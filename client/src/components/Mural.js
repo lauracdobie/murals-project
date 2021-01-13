@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, addToTour, removeFromTour}){
     const [likeButtonText, setLikeButtonText] = useState("♥️");
-    const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list")
+    // const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list")
     if (!mural) return null;
 
     const handleLike = () => {
@@ -31,6 +31,18 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, addT
         })
 
     }
+
+    // const handleTourAddRemove = () => {
+
+    //     if (tourButtonText === "Add mural to my tour list") {
+    //         addToTour(mural);
+    //         setTourButtonText("Remove mural from my tour");
+    //     }
+    //     else {
+    //         removeFromTour(mural);
+    //         setTourButtonText("Add mural to my tour list");
+    //     }
+    // }
     const handleAddToTour = () => {
             addToTour(mural);
         }

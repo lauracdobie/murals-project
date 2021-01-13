@@ -58,7 +58,7 @@ function MuralsContainer () {
         muralsList.splice(muralToRemoveIndex, 1);
         setTourMurals(muralsList);
         console.log(tourMurals);
-
+        setFilteredMurals(muralsList)
     }
 
     const tourMuralFilter = () => {
