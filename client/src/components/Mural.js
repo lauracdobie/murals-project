@@ -23,7 +23,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
             updatedValue = mural.likes -= 1;
             setLikeButtonText(Unliked);
         }
-                
+
         updateMural({
             _id: mural._id,
             name: mural.name,
@@ -34,11 +34,11 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
             year: mural.year,
             lat: mural.lat,
             lng: mural.lng,
-            imageURL: mural.imageUrl, 
+            imageUrl: mural.imageUrl, 
             likes: updatedValue
         })
-    
     }
+
     const handleVisited = () => {
         if (visitedButtonText === "Not Visited") {
             setVisitedButtonText("Visited");
