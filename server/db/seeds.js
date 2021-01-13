@@ -53,18 +53,6 @@ db.murals.insertMany([
         likes: 0
     },
     {
-        name: "Study of a Woman in Black(3)",
-        artist: "James Klinge",
-        instagram: "jamesklinge_art",
-        location: "146 Saltmarket",
-        description: "This is the first of three installations titled Study of a Woman in Black. They’re all created by James Klinge. These ones are some really detailed murals.",
-        year: 2016, 
-        lat: 55.86452994056858, 
-        lng: -4.257834800604407,
-        imageUrl: "./static/woman_in_black_3.jpg",
-        likes: 0
-    },
-    {
         name: "The Musician",
         artist: "Rogue-One",
         instagram: "rogueoner",
@@ -110,7 +98,7 @@ db.murals.insertMany([
         year: 2019, 
         lat: 55.863546657324015, 
         lng: -4.255969363017519,
-        imageUrl: ".static/bubbles.jgp",
+        imageUrl: "./static/bubbles.jpg",
         likes: 0
     },
     {
