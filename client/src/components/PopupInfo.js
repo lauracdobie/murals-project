@@ -48,7 +48,6 @@ function PopupInfo ({popupInfo, updatePopupInfo}){
             <p>{popupInfo.location}</p>
             <p>{popupInfo.artist}, {popupInfo.year}</p>
             <p>{popupInfo.instagram}</p>
-            <button onClick={handleLike}>{likeButtonText}</button>
         </div>
     )
 }
