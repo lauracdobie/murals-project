@@ -4,8 +4,8 @@ import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 import InstagramIcon from '../assets/instagram.png';
 
-function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link}){
-    const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
+function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, visitedButtonText, setVisitedButtonText}){
+    // const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
 
     const [visitedClass, setVisitedClass] = useState('mural-listing');
 
@@ -34,7 +34,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
             year: mural.year,
             lat: mural.lat,
             lng: mural.lng,
-            imageURL: mural.imageUrL, 
+            imageUrl: mural.imageUrl, 
             likes: updatedValue
         })
     

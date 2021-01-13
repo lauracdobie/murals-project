@@ -2,8 +2,11 @@ import Mural from './Mural';
 import MuralMap from './MuralMap';
 import './MuralsList.css';
 import MuralFilterForm from './MuralFilterForm';
+import {useState} from 'react';
 
 function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}){
+    const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
+
     if (!murals) return null;
     
     const displayMurals = murals.map(mural => {
@@ -26,6 +29,8 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}
         instagramLink = {"https://www.instagram.com/" + mural.instagram}
         instagram2Link = {instagram2Link}
         instagram3Link = {instagram3Link}
+        visitedButtonText={visitedButtonText}
+        setVisitedButtonText={setVisitedButtonText}
         />)
     })
 
