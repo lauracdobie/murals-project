@@ -20,7 +20,7 @@
 
 .leaflet-container {
   height: 600px;
-  width: 100%;
+  min-width: 600px;
 }
 
 .mural-pic {
@@ -30,4 +30,12 @@
 
 .popup >p{
   font-size: 200px;
+}
+
+.all-murals {
+  width: 100%;
+}
+
+.mural-map {
+  width: 100%;
 }

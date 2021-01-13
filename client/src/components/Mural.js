@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import './Mural.css';
 
 function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link}){
     const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
@@ -41,28 +42,30 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
             setVisitedButtonText("Not Visited");
     }}
 
-    const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link}>@{mural.instagram2}</a></p>): null;
-    const instagram3Node = instagram3Link ? (<p>Instagram: <a href={instagram3Link}>@{mural.instagram3}</a></p>): null;
+    const instagram2Node = instagram2Link ? (<a href={instagram2Link}>@{mural.instagram2}</a>): null;
+    const instagram3Node = instagram3Link ? (<a href={instagram3Link}>@{mural.instagram3}</a>): null;
 
     return (
         <div className='mural-listing'>
-            <img className='mural-pic' src={mural.imageUrl} alt={mural.name}/>
-            <h3>{mural.name}</h3>
-            <p>{mural.artist}</p>
-            <p>{mural.year}</p>
-            <p>Instagram: <a href={instagramLink}>@{mural.instagram}</a></p>
-            {instagram2Node}
-            {instagram3Node}
-            <p>{mural.location}</p>
-            <p>{mural.description}</p>
-            <p>Likes: {mural.likes}</p>
-            <button onClick={handleLike}>{likeButtonText}</button>    
-
-        
-                    
-            <button onClick={handleVisited}>{visitedButtonText}</button>
-
-
+            <div className="mural-image-section">
+                <img className='mural-pic' src={mural.imageUrl} alt={mural.name}/>
+            </div>
+            <div className="mural-text">
+                <div className="mural-title">
+                    <h3>{mural.name}</h3>
+                    <div className="mural-buttons">
+                        <div className="likes-section">
+                            <button className="like-button" onClick={handleLike}>{likeButtonText}</button>
+                            <p className="likes-number">{mural.likes}</p>
+                        </div>
+                        <button className="visited-button" onClick={handleVisited}>{visitedButtonText}</button>
+                    </div>
+                </div>
+                <p>{mural.artist}, {mural.year}</p>
+                <p><a href={instagramLink}>@{mural.instagram}</a> {instagram2Node} {instagram3Node} </p>
+                <p>{mural.location}</p>
+                <p className="mural-description">{mural.description}</p>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import Mural from './Mural';
 import MuralMap from './MuralMap';
+import './MuralsList.css';
 
 function MuralsList({murals, updateMural}){
     if (!murals) return null;
@@ -36,13 +37,18 @@ function MuralsList({murals, updateMural}){
 
     return (
         <>
-            <h3>I am the murals list</h3>
             {toggleDisplay()}
-            {displayMurals}
-            <MuralMap 
-                murals={murals} 
-                updateMural={updateMural}
-                />
+            <section className="all-murals">
+                <div className="display-murals">
+                    {displayMurals}
+                </div>
+                <div className="mural-map">
+                    <MuralMap 
+                    murals={murals} 
+                    updateMural={updateMural}
+                    />
+                </div>
+            </section>
         </>
     )
 }

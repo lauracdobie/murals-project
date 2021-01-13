@@ -1,0 +1,46 @@
+.mural-listing {
+  border-top: solid grey 2px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.mural-text {
+  padding-left: 20px;
+
+}
+
+.mural-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mural-title > h3 {
+  margin: 0;
+}
+
+.mural-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.likes-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.likes-number {
+  margin: 0;
+}
+
+.visited-button {
+  height: fit-content;
+  width: fit-content;
+  margin-left: 5px;
+}
+
+.mural-description {
+}
