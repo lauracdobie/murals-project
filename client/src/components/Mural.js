@@ -4,12 +4,12 @@ import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 import InstagramIcon from '../assets/instagram.png';
 
-function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, visitedButtonText, setVisitedButtonText}){
+function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, visitedButtonText, setVisitedButtonText, likeButtonText, setLikeButtonText, muralIsLiked}){
     // const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
 
     const [visitedClass, setVisitedClass] = useState('mural-listing');
 
-    const [likeButtonText, setLikeButtonText] = useState(Unliked);
+    // const [likeButtonImage, setLikeButtonImage] = useState(Unliked);
     if (!mural) return null;
     
 
@@ -18,10 +18,12 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
         if (likeButtonText === Unliked) {
             updatedValue = mural.likes += 1;
             setLikeButtonText(Liked);
+            mural.isLiked = true;
         }
         else {
             updatedValue = mural.likes -= 1;
             setLikeButtonText(Unliked);
+            mural.isLiked = false;
         }
                 
         updateMural({

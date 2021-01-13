@@ -3,9 +3,14 @@ import MuralMap from './MuralMap';
 import './MuralsList.css';
 import MuralFilterForm from './MuralFilterForm';
 import {useState} from 'react';
+import Liked from '../assets/liked.png';
+import Unliked from '../assets/unliked.png';
 
 function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}){
     const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
+    const [likeButtonText, setLikeButtonText] = useState(Unliked);
+
+    // const highlightVisited = 
 
     if (!murals) return null;
     
@@ -21,6 +26,15 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}
             instagram3Link = ("https://www.instagram.com/" + mural.instagram3)
         }
 
+        // mural.isLiked ? setLikeButtonText(Liked) : setLikeButtonText(Unliked);
+
+        // if (mural.isLiked) {
+        //     setLikeButtonText(Liked)
+        // }
+        // else {
+        //     setLikeButtonText(Unliked)
+        // }
+
         return(
         <Mural
         murals={murals}
@@ -31,6 +45,9 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}
         instagram3Link = {instagram3Link}
         visitedButtonText={visitedButtonText}
         setVisitedButtonText={setVisitedButtonText}
+        likeButtonText={likeButtonText}
+        setLikeButtonText={setLikeButtonText}
+        // muralIsLiked={mural.isLiked}
         />)
     })
 
@@ -55,8 +72,8 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}
                 </div>
                 <div className="mural-map">
                     <MuralMap 
-                    murals={murals} 
-                    updateMural={updateMural}
+                        murals={murals} 
+                        updateMural={updateMural}
                     />
                 </div>
             </section>
