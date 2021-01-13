@@ -55,6 +55,7 @@ function MuralsContainer () {
     const removeFromTour = (muralToRemove) => {
         let muralsList = [...tourMurals];
         const muralToRemoveIndex = tourMurals.indexOf(muralToRemove);
+        muralToRemove.addedToTour = false;
         muralsList.splice(muralToRemoveIndex, 1);
         setTourMurals(muralsList);
         console.log(tourMurals);
