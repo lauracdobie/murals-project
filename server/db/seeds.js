@@ -51,5 +51,80 @@ db.murals.insertMany([
         lng: -4.2600252186499565,
         imageUrl: "./static/shadow_hand_puppets.jpg",
         likes: 0
+    },
+    {
+        name: "Study of a Woman in Black(3)",
+        artist: "James Klinge",
+        instagram: "jamesklinge_art",
+        location: "146 Saltmarket",
+        description: "This is the first of three installations titled Study of a Woman in Black. They’re all created by James Klinge. These ones are some really detailed murals.",
+        year: 2016, 
+        lat: 55.86452994056858, 
+        lng: -4.257834800604407,
+        imageUrl: "./static/woman_in_black_3.jpg",
+        likes: 0
+    },
+    {
+        name: "The Musician",
+        artist: "Rogue-One",
+        instagram: "rogueoner",
+        location: "Sauchiehall Lane",
+        description: "Glasgow has a fantastic live music scene, and down the lanes, round the back of the bars in the heart of Glasgow is the perfect place for this Musician mural.",
+        year: 2017, 
+        lat: 55.854975323566705, 
+        lng: -4.24585778660124,
+        imageUrl: "./static/the_musician.jpg",
+        likes: 0
+    },
+    {
+        name: "The Swimmer",
+        artist: "Smug",
+        instagram: "smugone",
+        location: "Anderston Quay",
+        description: "One of the first murals to have been painted by Smug, this installation celebrates Glasgows 2014 Commonwealth Games. At the Kingston Bridge, a concrete wall is emblazoned with huge Commonwealth swimmers greeting drivers waiting at the traffic lights.",
+        year: 2014, 
+        lat: 55.85683129410766, 
+        lng: -4.27024220747374,
+        imageUrl: "./static/the_swimmer.jpg",
+        likes: 0
+    },
+    {
+        name: "Today we're in love aren't we?",
+        artist: "Cobolt Collective",
+        instagram: "coboltcollective",
+        location: "Brown Street Car Park",
+        description: "Celebrating 30 years of the Glasgow's Doors Open Days Festival and the 500 or so buildings which have been included within its programme, this mural showcases the diverse range of architecture within the city.",
+        year: 2019, 
+        lat: 55.85815102993528, 
+        lng: -4.265043872630641,
+        imageUrl: "./static/today_we're_in_love.jpg",
+        likes: 0
+    },
+    {
+        name: "Bubbles",
+        artist: "Art Pistol and Rogue One",
+        instagram: "artpistol",
+        instagram2: "rogueoner",
+        location: "Renfield Lane",
+        description: "Renfield Lane features some amazing architecture and this lane is all about making this lane a more welcoming and bonny place. Here we see Rogue put his considerable talents on two facing walls to create a uniqure spectacle.",
+        year: 2019, 
+        lat: 55.863546657324015, 
+        lng: -4.255969363017519,
+        imageUrl: ".static/bubbles.jgp",
+        likes: 0
+    },
+    {
+        name: "As Good as Gold",
+        artist: "Ciarán Glöbel and Conzo Throb",
+        instagram: "ciaranglobel",
+        instagram2: "conzothrob",
+        location: "Buchanan Street",
+        description: "As Good as Gold by street artist duo Ciarán Glöbel and Conzo Throb is a comment on inflation via the popular chocolate bar Freddo, which used to only cost 10p to buy. The city's latest mural can be found just off Buchanan Street, down the lane beside Princes Square.",
+        year: 2019, 
+        lat: 55.86209272356093, 
+        lng: -4.253904515211911,
+        imageUrl: "./static/good_as_gold.jpg",
+        likes: 0
     }
+
 ]);
