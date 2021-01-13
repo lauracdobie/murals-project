@@ -27,7 +27,7 @@ function MuralsContainer () {
                     return currentMural[muralSelector].toString().toUpperCase().includes(userInput.toUpperCase());
                 }
             } else if (muralSelector === "") {
-                return;
+                return currentMural;
             } else {
                 return currentMural[muralSelector].toUpperCase().includes(userInput.toUpperCase());
             };
