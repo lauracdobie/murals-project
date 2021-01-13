@@ -65,3 +65,12 @@
   width: 15px;
   height: 15px;
 }
+
+.visited {
+  border-top: solid grey 2px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: lightgrey;
+}
