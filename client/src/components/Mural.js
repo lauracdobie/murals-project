@@ -12,13 +12,13 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
 
     const handleLike = () => {
         let updatedValue = null;
-        if (likeButtonText === Liked) {
+        if (likeButtonText === Unliked) {
             updatedValue = mural.likes += 1;
-            setLikeButtonText(Unliked);
+            setLikeButtonText(Liked);
         }
         else {
             updatedValue = mural.likes -= 1;
-            setLikeButtonText(Liked);
+            setLikeButtonText(Unliked);
         }
                 
         updateMural({
