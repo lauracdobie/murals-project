@@ -21,14 +21,14 @@
   text-decoration: none;
 }
 
-.mural-text > div > p > a {
+.insta-text > p > a {
   text-decoration: none;
   color: #282828fa;
   border-bottom: solid 2px white;
   transition: border ease-in 0.5s;
 }
 
-.mural-text > div > p > a:hover {
+.insta-text > p > a:hover {
   border-bottom: #767676 solid 2px;
 }
 
