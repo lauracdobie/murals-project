@@ -5,12 +5,16 @@ import MuralMap from '../components/MuralMap';
 import MuralFilterForm from '../components/MuralFilterForm';
 import Mural from '../components/Mural';
 import Header from '../components/Header';
+import Liked from '../assets/liked.png';
+import Unliked from '../assets/unliked.png';
 
 function MuralsContainer () {
     
     const [murals, setMurals] = useState([]);
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
+    const [likeButtonText, setLikeButtonText] = useState(Unliked);
+
     useEffect(()=> {
         getMurals() 
         .then((data) => {
@@ -19,6 +23,39 @@ function MuralsContainer () {
             setFilteredMurals(data)
         })
     }, [])
+
+    const onLike = (mural) => {
+        let updatedValue = null;
+        if (likeButtonText === Unliked) {
+            updatedValue = mural.likes += 1;
+            setLikeButtonText(Liked);
+            mural.isLiked = true;
+            let updatedList = [...filteredMurals, mural]
+            setFilteredMurals(updatedList);
+        }
+
+        else {
+            updatedValue = mural.likes -= 1;
+            setLikeButtonText(Unliked);
+            mural.isLiked = false;
+            let updatedList = [...filteredMurals, mural]
+            setFilteredMurals(updatedList);
+        }
+                         
+        updateMural({
+            _id: mural._id,
+            name: mural.name,
+            artist: mural.artist,
+            instagram: mural.instagram,
+            location: mural.location,
+            description: mural.description,
+            year: mural.year,
+            lat: mural.lat,
+            lng: mural.lng,
+            imageUrl: mural.imageUrl, 
+            likes: updatedValue
+        })
+    }
 
     const handleUserFilter = (userInput) => {
         const someMurals = murals.filter((currentMural) => {
@@ -64,7 +101,14 @@ function MuralsContainer () {
 
         <>
             <Header/>
-            <MuralsList handleUserFilter={handleUserFilter} handleMuralSelector={handleMuralSelector} murals={filteredMurals} updateMural={updateMural}/>
+            <MuralsList 
+                handleUserFilter={handleUserFilter} 
+                handleMuralSelector={handleMuralSelector} 
+                murals={filteredMurals} 
+                updateMural={updateMural}
+                onLike={onLike}
+                likeButtonText={likeButtonText}
+                setLikeButtonText={setLikeButtonText}/>
         </>
     )
 }

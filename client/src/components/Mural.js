@@ -4,43 +4,47 @@ import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 import InstagramIcon from '../assets/instagram.png';
 
-function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, visitedButtonText, setVisitedButtonText, likeButtonText, setLikeButtonText, muralIsLiked}){
+function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, visitedButtonText, setVisitedButtonText, likeButtonText, setLikeButtonText, onLike}){
     // const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
 
     const [visitedClass, setVisitedClass] = useState('mural-listing');
 
     // const [likeButtonImage, setLikeButtonImage] = useState(Unliked);
     if (!mural) return null;
-    
 
     const handleLike = () => {
-        let updatedValue = null;
-        if (likeButtonText === Unliked) {
-            updatedValue = mural.likes += 1;
-            setLikeButtonText(Liked);
-            mural.isLiked = true;
-        }
-        else {
-            updatedValue = mural.likes -= 1;
-            setLikeButtonText(Unliked);
-            mural.isLiked = false;
-        }
-                
-        updateMural({
-            _id: mural._id,
-            name: mural.name,
-            artist: mural.artist,
-            instagram: mural.instagram,
-            location: mural.location,
-            description: mural.description,
-            year: mural.year,
-            lat: mural.lat,
-            lng: mural.lng,
-            imageUrl: mural.imageUrl, 
-            likes: updatedValue
-        })
-    
+        onLike(mural);
     }
+    
+
+    // const handleLike = () => {
+    //     let updatedValue = null;
+    //     if (likeButtonText === Unliked) {
+    //         updatedValue = mural.likes += 1;
+    //         setLikeButtonText(Liked);
+    //         // mural.isLiked = true;
+    //     }
+    //     else {
+    //         updatedValue = mural.likes -= 1;
+    //         setLikeButtonText(Unliked);
+    //         // mural.isLiked = false;
+    //     }
+                
+    //     updateMural({
+    //         _id: mural._id,
+    //         name: mural.name,
+    //         artist: mural.artist,
+    //         instagram: mural.instagram,
+    //         location: mural.location,
+    //         description: mural.description,
+    //         year: mural.year,
+    //         lat: mural.lat,
+    //         lng: mural.lng,
+    //         imageUrl: mural.imageUrl, 
+    //         likes: updatedValue
+    //     })
+    
+    // }
     const handleVisited = () => {
         if (visitedButtonText === "Not Visited") {
             setVisitedButtonText("Visited");
