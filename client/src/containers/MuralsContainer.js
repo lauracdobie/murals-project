@@ -4,6 +4,7 @@ import MuralsList from '../components/MuralsList';
 import MuralMap from '../components/MuralMap';
 import MuralFilterForm from '../components/MuralFilterForm';
 import Mural from '../components/Mural';
+import Header from '../components/Header';
 
 function MuralsContainer () {
     
@@ -68,7 +69,7 @@ function MuralsContainer () {
     return (
 
         <>
-            <h2>I am the murals container </h2>
+            <Header/>
             <div>
                 <MuralFilterForm onUserInput={handleUserFilter} onUserSelect={handleMuralSelector}/>
             </div>
