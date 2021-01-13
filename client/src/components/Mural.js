@@ -17,13 +17,6 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link}){
             updatedValue = mural.likes -= 1;
             setLikeButtonText("♥️");
         }
-    const handleVisited = () => {
-        if (visitedButtonText === "Not Visited") {
-            setVisitedButtonText("✔️Visited");
-        }
-        else {
-            setVisitedButtonText("Not Visited");
-        }
                 
         updateMural({
             _id: mural._id,
@@ -39,6 +32,13 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link}){
             likes: updatedValue
         })
     
+    }
+    const handleVisited = () => {
+        if (visitedButtonText === "Not Visited") {
+            setVisitedButtonText("✔️Visited");
+        }
+        else {
+            setVisitedButtonText("Not Visited");
     }}
 
     const instagram2Node = instagram2Link ? (<p>Instagram: <a href={instagram2Link}>@{mural.instagram2}</a></p>): null
@@ -55,11 +55,10 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link}){
             <p>Likes: {mural.likes}</p>
             <button onClick={handleLike}>{likeButtonText}</button>    
 
-            
+        
                     
-            {/* <button onClick={handleVisited}>{visitedButtonText}</button> */}
+            <button onClick={handleVisited}>{visitedButtonText}</button>
 
-            {/* The error says that handleVisited is not defined */}
 
         </div>
     )
