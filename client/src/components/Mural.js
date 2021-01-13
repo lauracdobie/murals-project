@@ -34,7 +34,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
             year: mural.year,
             lat: mural.lat,
             lng: mural.lng,
-            imageURL: mural.imageUrL, 
+            imageURL: mural.imageUrl, 
             likes: updatedValue
         })
     
