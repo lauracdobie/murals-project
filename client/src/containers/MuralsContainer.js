@@ -70,10 +70,7 @@ function MuralsContainer () {
 
         <>
             <Header/>
-            <div>
-                <MuralFilterForm onUserInput={handleUserFilter} onUserSelect={handleMuralSelector}/>
-            </div>
-            <MuralsList murals={filteredMurals} updateMural={updateMural}/>
+            <MuralsList handleUserFilter={handleUserFilter} handleMuralSelector={handleMuralSelector} murals={filteredMurals} updateMural={updateMural}/>
         </>
     )
 }

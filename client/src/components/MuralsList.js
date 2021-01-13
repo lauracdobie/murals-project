@@ -1,8 +1,9 @@
 import Mural from './Mural';
 import MuralMap from './MuralMap';
 import './MuralsList.css';
+import MuralFilterForm from './MuralFilterForm';
 
-function MuralsList({murals, updateMural}){
+function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}){
     if (!murals) return null;
     
     const displayMurals = murals.map(mural => {
@@ -39,8 +40,13 @@ function MuralsList({murals, updateMural}){
         <>
             {toggleDisplay()}
             <section className="all-murals">
-                <div className="display-murals">
-                    {displayMurals}
+                <div>
+                    <div>
+                        <MuralFilterForm onUserInput={handleUserFilter} onUserSelect={handleMuralSelector}/>
+                    </div>
+                    <div className="display-murals">
+                        {displayMurals}
+                    </div>
                 </div>
                 <div className="mural-map">
                     <MuralMap 
@@ -50,7 +56,7 @@ function MuralsList({murals, updateMural}){
                 </div>
             </section>
         </>
-    )
-}
+    );
+};
 
 export default MuralsList;

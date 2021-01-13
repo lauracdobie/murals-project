@@ -49,9 +49,11 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
 
     return (
         <div className='mural-listing'>
+
             <div className="mural-image-section">
                 <img className='mural-pic' src={mural.imageUrl} alt={mural.name}/>
             </div>
+
             <div className="mural-text">
                 <div className="mural-title">
                     <h3>{mural.name}</h3>
@@ -63,6 +65,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
                     <p className="mural-description">{mural.description}</p>
                 </div>
             </div>
+
             <div className="mural-buttons">
                 <div className="likes-section">
                         <button className="like-button" onClick={handleLike}><img className="likes-heart"src={likeButtonText}/></button>
@@ -70,6 +73,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
                 </div>
                 <button className="visited-button" onClick={handleVisited}>{visitedButtonText}</button>
             </div>
+            
         </div>
     )
 }

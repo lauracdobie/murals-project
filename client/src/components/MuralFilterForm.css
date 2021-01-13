@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@900&family=Inter:wght@400;500&display=swap');
+
+.mural-filter-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #767676;
+}
+
+#mural-filter-select {
+  font-family: 'Inter', sans-serif;
+  margin: 5px;
+  padding: 4px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: solid #CFCFCF 1px;
+  color: #767676;
+}
+
+#mural-input {
+  font-family: 'Inter', sans-serif;
+  margin: 5px;
+  padding: 4px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: solid #CFCFCF 1px;
+  color: #767676;
+}
+
+#mural-filter {
+  padding: 10px 10px 10px 40px;
+  border-top: solid grey 2px;
+}
