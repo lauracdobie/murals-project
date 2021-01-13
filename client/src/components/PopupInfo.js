@@ -7,39 +7,7 @@ import {useState} from 'react';
 import Mural from "./Mural";
 
 function PopupInfo ({popupInfo, updatePopupInfo}){
-    const [likeButtonText, setLikeButtonText] = useState( "♥️");
     if (!popupInfo) return null;
-    
-    // let muralImage = {};
-
-    // const getImage = () => {
-    //     if (popupInfo.name === "Crazy Cat Lady") {
-    //         return muralImage = "./static/crazy_cat_lady.jpg"
-    //     }
-    //     else if (popupInfo.name === "The Lost Giant") {
-    //         return muralImage = LostGiant;
-    //     }
-    //     else if (popupInfo.name === "Dr Connolly, I presume") {
-    //         return muralImage = DrConnolly;
-    //     }
-    //     else if (popupInfo.name === "Shadow Hand Puppets") {
-    //         return muralImage = ShadowHandPuppet;
-    //     }
-    // }
-
-    // getImage();
-
-    const handleLike = () => {
-        let updatedValue = null;
-        if (likeButtonText === "♥️") {
-            updatedValue = popupInfo.likes += 1;
-            setLikeButtonText("♡");
-        }
-        else {
-            updatedValue = popupInfo.likes -= 1;
-            setLikeButtonText("♥️");
-        }
-    }
 
     return (
         <div className='popup-listing'>
@@ -47,7 +15,6 @@ function PopupInfo ({popupInfo, updatePopupInfo}){
             <h3>{popupInfo.name}</h3>
             <p>{popupInfo.location}</p>
             <p>{popupInfo.artist}, {popupInfo.year}</p>
-            <p>{popupInfo.instagram}</p>
         </div>
     )
 }
