@@ -1,22 +1,24 @@
 import {useState} from 'react';
 import './Mural.css';
+import Liked from '../assets/liked.png';
+import Unliked from '../assets/unliked.png';
 
 function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link}){
     const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
 
-    const [likeButtonText, setLikeButtonText] = useState("♥️");
+    const [likeButtonText, setLikeButtonText] = useState(Unliked);
     if (!mural) return null;
     
 
     const handleLike = () => {
         let updatedValue = null;
-        if (likeButtonText === "♥️") {
+        if (likeButtonText === Liked) {
             updatedValue = mural.likes += 1;
-            setLikeButtonText("♡");
+            setLikeButtonText(Unliked);
         }
         else {
             updatedValue = mural.likes -= 1;
-            setLikeButtonText("♥️");
+            setLikeButtonText(Liked);
         }
                 
         updateMural({
@@ -63,10 +65,10 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
             </div>
             <div className="mural-buttons">
                 <div className="likes-section">
-                        <button className="like-button" onClick={handleLike}>{likeButtonText}</button>
+                        <button className="like-button" onClick={handleLike}><img className="likes-heart"src={likeButtonText}/></button>
                         <p className="likes-number">{mural.likes}</p>
-                    </div>
-                    <button className="visited-button" onClick={handleVisited}>{visitedButtonText}</button>
+                </div>
+                <button className="visited-button" onClick={handleVisited}>{visitedButtonText}</button>
             </div>
         </div>
     )

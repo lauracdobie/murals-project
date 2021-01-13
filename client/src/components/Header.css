@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@900&display=swap');
+
+.app-name {
+  font-family: "Big Shoulders Stencil Text";
+  font-size: 36px;
+  line-height: 1.1;
+  padding: 15px;
+  margin: 0px;
+}

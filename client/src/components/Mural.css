@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@900&family=Inter:wght@400;500&display=swap');
+
 .mural-listing {
   border-top: solid grey 2px;
   display: flex;
@@ -8,7 +10,8 @@
 
 .mural-text {
   padding-left: 20px;
-
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
 }
 
 .mural-title {
@@ -25,6 +28,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-self: flex-start;
+  font-family: 'Inter', sans-serif;
 }
 
 .likes-section {
@@ -36,13 +40,28 @@
 
 .likes-number {
   margin: 0;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.like-button {
+  border: none;
+  background: none;
 }
 
 .visited-button {
   height: fit-content;
   width: fit-content;
   margin-left: 5px;
+  border-radius: 25%;
+  border: solid #767676 2px;
+  background: none;
 }
 
 .mural-description {
+}
+
+.likes-heart {
+  width: 15px;
+  height: 15px;
 }

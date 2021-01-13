@@ -1,6 +1,8 @@
+import './Header.css';
+
 function Header () {
   return (
-    <h1>Glasgow Murals</h1>
+    <h1 className="app-name">Glasgow Murals</h1>
   );
 };
 

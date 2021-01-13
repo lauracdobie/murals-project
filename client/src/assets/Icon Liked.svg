@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="21px" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon Liked</title>
+    <g id="Glasgow-Murals" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Glasgow-Murals-–-01" transform="translate(-596.000000, -357.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Mural-Copy" transform="translate(20.000000, 337.000000)">
+                <path d="M588.001419,40.7923616 L587.507327,40.5151936 C587.044578,40.2380256 576,33.9139287 576,27.0954805 C576,23.1778498 579.17785,20 583.09548,20 C585.223631,20 586.95172,21.3882462 588,22.4993367 C589.048404,21.3581367 590.776492,20 592.90452,20 C596.82215,20 600,23.1778498 600,27.0954805 C600,33.8824618 588.986889,40.2381613 588.492673,40.5151936 L588.001419,40.7923616 Z" id="Icon-Liked"></path>
+            </g>
+        </g>
+    </g>
+</svg>
