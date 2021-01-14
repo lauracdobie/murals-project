@@ -8,15 +8,11 @@
   height: 200px;
 }
 
-.popup >p{
-  font-size: 200px;
-}
-
 .all-murals {
   width: 100%;
 }
 
 .mural-map {
-  width: 100%;
+  width: 50%;
   height: 100vh;
 }

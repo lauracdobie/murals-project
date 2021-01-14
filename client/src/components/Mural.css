@@ -13,7 +13,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   min-width: 300px;
-  max-width: 800px;
+  /* max-width: 800px; */
 }
 
 .mural-text > div > p {
@@ -75,9 +75,9 @@
   background: none;
 }
 
-.mural-description {
+/* .mural-description {
   width: 400px;
-}
+} */
 
 .likes-heart {
   width: 15px;

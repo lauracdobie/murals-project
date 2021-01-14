@@ -40,7 +40,7 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}
         <>
             {toggleDisplay()}
             <section className="all-murals">
-                <div>
+                <div className="left-section">
                     <div>
                         <MuralFilterForm onUserInput={handleUserFilter} onUserSelect={handleMuralSelector}/>
                     </div>

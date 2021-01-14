@@ -6,5 +6,10 @@
 .display-murals {
   height: 100vh;
   overflow: scroll;
+  /* width: 50%; */
   min-width: 500px;
+}
+
+.left-section {
+  width:50%;
 }
