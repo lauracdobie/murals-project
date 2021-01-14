@@ -18,6 +18,8 @@ const MuralFilterForm = ( { onUserInput, onUserSelect} ) => {
         <option value="name">Mural Title</option>
         <option value="artist">Artist</option>
         <option value="year">Year</option>
+        <option value="location">Location</option>
+        <option value="description">Description</option>
       </select>
       <input  placeholder="Enter keyword" onChange={handleFilterInput} type="text" id="mural-input"/>
     </div>
