@@ -1,10 +1,4 @@
-// import CatLady from "../assets/crazy_cat_lady.jpg";
-// import LostGiant from "../assets/lost_giant.jpg"
-// import DrConnolly from "../assets/dr_connolly.jpg"
-// import ShadowHandPuppet from "../assets/shadow_hand_puppets.jpg"
-import {useState} from 'react';
-
-import Mural from "./Mural";
+import './PopupInfo.css';
 
 function PopupInfo ({popupInfo, updatePopupInfo}){
     if (!popupInfo) return null;

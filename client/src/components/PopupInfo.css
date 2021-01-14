@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@900&family=Inter:wght@400;500&display=swap');
+
+.popup-listing {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.popup-listing > p {
+  color: #767676;
+  text-decoration: none;
+}
+
+.popup-listing > h3 {
+  margin: 0;
+}
+
+.popup-pic {
+  border-radius: 8px;
+  width: 200px;
+}
