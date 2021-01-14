@@ -39,15 +39,15 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
         })
     }
 
-    const handleVisited = () => {
-        if (visitedButtonText === "Not Visited") {
-            setVisitedButtonText("Visited");
-            setVisitedClass('visited');
-        }
-        else {
-            setVisitedButtonText("Not Visited");
-            setVisitedClass('mural-listing')
-    }}
+    // const handleVisited = () => {
+    //     if (visitedButtonText === "Not Visited") {
+    //         setVisitedButtonText("Visited");
+    //         setVisitedClass('visited');
+    //     }
+    //     else {
+    //         setVisitedButtonText("Not Visited");
+    //         setVisitedClass('mural-listing')
+    // }}
 
     const instagram2Node = instagram2Link ? (<a href={instagram2Link}>@{mural.instagram2}</a>): null;
     const instagram3Node = instagram3Link ? (<a href={instagram3Link}>@{mural.instagram3}</a>): null;
@@ -84,7 +84,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
                         <button className="like-button" onClick={handleLike}><img className="likes-heart"src={likeButtonText}/></button>
                         <p className="likes-number">{mural.likes}</p>
                 </div>
-                <button className="visited-button" onClick={handleVisited} >{visitedButtonText}</button>
+                {/* <button className="visited-button" onClick={handleVisited} >{visitedButtonText}</button> */}
             </div>
             
         </div>
