@@ -6,7 +6,7 @@ import {useState} from 'react';
 import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 
-function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter, onLike, likeButtonText, setLikeButtonText}){
+function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, onLike, likeButtonText, setLikeButtonText}){
     const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
     // const [likeButtonText, setLikeButtonText] = useState(Unliked);
 
@@ -26,14 +26,8 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter,
             instagram3Link = ("https://www.instagram.com/" + mural.instagram3)
         }
 
-        // mural.isLiked ? setLikeButtonText(Liked) : setLikeButtonText(Unliked);
-
-        // if (mural.isLiked) {
-        //     setLikeButtonText(Liked)
-        // }
-        // else {
-        //     setLikeButtonText(Unliked)
-        // }
+        mural.likeButton = Unliked;
+        // console.log(mural);
 
         return(
         <Mural
@@ -48,6 +42,7 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter,
             likeButtonText={likeButtonText}
             setLikeButtonText={setLikeButtonText}
             onLike={onLike}
+            // muralLikeButton={mural.likeButton}
         // muralIsLiked={mural.isLiked}
         />)
     })

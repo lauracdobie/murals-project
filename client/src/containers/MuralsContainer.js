@@ -13,7 +13,7 @@ function MuralsContainer () {
     const [murals, setMurals] = useState([]);
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
-    const [likeButtonText, setLikeButtonText] = useState(Unliked);
+    // const [likeButtonText, setLikeButtonText] = useState(Unliked);
 
     useEffect(()=> {
         getMurals() 
@@ -33,40 +33,61 @@ function MuralsContainer () {
         })
     }
 
+    // const getMuralLikeButtons = (murals) =>{
+    //     let updatedArray = filteredMurals.forEach(mural => mural.likeButton = Unliked)
+    //     setFilteredMurals(updatedArray);
+    //     console.log("updated array");
+    //     console.log(updatedArray);
+    // }
+
+   
+    // getMuralLikeButtons(filteredMurals);
+   
+
     //setDefaultLikeValues();
 
-    const changeLikeButtons = () => {
-        filteredMurals.forEach((mural) => {
-            if (mural.isLiked === true) {
-                setLikeButtonText(Liked);
-            } 
-            else if (mural.isLiked === false) {
-                setLikeButtonText(Unliked);
-            }
-        })
-    }
+    // const updatedArray = filteredMurals.forEach((mural) => {
+    //     return mural.likeButton = Unliked;
+    // })
+    
+    // setFilteredMurals(updatedArray);
+    // console.log("updated array");
+    // console.log(updatedArray);
+
+    // const changeLikeButtons = () => {
+    //     filteredMurals.forEach((mural) => {
+    //         if (mural.isLiked === true) {
+    //             setLikeButtonText(Liked);
+    //         } 
+    //         else if (mural.isLiked === false) {
+    //             setLikeButtonText(Unliked);
+    //         }
+    //     })
+    // }
 
     const onLike = (mural) => {
         let updatedValue = null;
-        if (mural.isLiked === true) {
+        if (mural.likeButton === Unliked) {
             updatedValue = mural.likes += 1;
             // setLikeButtonText(Liked);
             //mural.isLiked = false;
+            mural.likeButton = Liked;
             console.log("liked mural")
             console.log(mural);
-            changeLikeButtons();
+            // changeLikeButtons();
             let updatedList = [...filteredMurals, mural]
             setFilteredMurals(updatedList);
             // changeLikeButtons();
         }
 
-        else if (mural.isLiked === false) {
+        else if (mural.likeButton === Liked) {
             updatedValue = mural.likes -= 1;
             // setLikeButtonText(Unliked);
             //mural.isLiked = true;
+            mural.likeButton = Unliked;
             console.log("unliked mural")
             console.log(mural);
-            changeLikeButtons();
+            // changeLikeButtons();
             let updatedList = [...filteredMurals, mural]
             setFilteredMurals(updatedList);
             // changeLikeButtons();
@@ -144,12 +165,14 @@ function MuralsContainer () {
             <Header/>
             <MuralsList 
                 handleUserFilter={handleUserFilter} 
-                handleMuralSelector={handleMuralSelector} 
+                handleMuralSelector={handleMuralSelector}
+                setFilteredMurals={setFilteredMurals} 
                 murals={filteredMurals} 
                 updateMural={updateMural}
                 onLike={onLike}
-                likeButtonText={likeButtonText}
-                setLikeButtonText={setLikeButtonText}/>
+                // likeButtonText={likeButtonText}
+                // setLikeButtonText={setLikeButtonText}
+                />
         </>
     )
 }

@@ -4,7 +4,7 @@ import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 import InstagramIcon from '../assets/instagram.png';
 
-function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, visitedButtonText, setVisitedButtonText, likeButtonText, setLikeButtonText, onLike}){
+function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, visitedButtonText, setVisitedButtonText, onLike, muralLikeButton}){
     // const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
 
     const [visitedClass, setVisitedClass] = useState('mural-listing');
@@ -13,12 +13,12 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
     if (!mural) return null;
 
     const handleLike = () => {
-        if (likeButtonText === Unliked) {
-            mural.isLiked = true;
-        }
-        else {
-            mural.isLiked = false;
-        }
+        // if (likeButtonText === Unliked) {
+        //     mural.isLiked = true;
+        // }
+        // else {
+        //     mural.isLiked = false;
+        // }
         onLike(mural);
     }
     
@@ -93,7 +93,7 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
 
             <div className="mural-buttons">
                 <div className="likes-section">
-                        <button className="like-button" onClick={handleLike}><img className="likes-heart"src={likeButtonText}/></button>
+                        <button className="like-button" onClick={handleLike}><img className="likes-heart"src={mural.likeButton}/></button>
                         <p className="likes-number">{mural.likes}</p>
                 </div>
                 <button className="visited-button" onClick={handleVisited} >{visitedButtonText}</button>
