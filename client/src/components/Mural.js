@@ -13,6 +13,12 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
     if (!mural) return null;
 
     const handleLike = () => {
+        if (likeButtonText === Unliked) {
+            mural.isLiked = true;
+        }
+        else {
+            mural.isLiked = false;
+        }
         onLike(mural);
     }
     

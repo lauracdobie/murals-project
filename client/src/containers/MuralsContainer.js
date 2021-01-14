@@ -24,36 +24,64 @@ function MuralsContainer () {
         })
     }, [])
 
-    filteredMurals.forEach(mural => mural.isLiked = false);
+    // filteredMurals.forEach(mural => {
+    //     return mural.isLiked = false});
+
+    const setDefaultLikeValues = () => {
+        filteredMurals.forEach((mural) => {
+            mural.isLiked = false;
+        })
+    }
+
+    //setDefaultLikeValues();
+
+    const changeLikeButtons = () => {
+        filteredMurals.forEach((mural) => {
+            if (mural.isLiked === true) {
+                setLikeButtonText(Liked);
+            } 
+            else if (mural.isLiked === false) {
+                setLikeButtonText(Unliked);
+            }
+        })
+    }
 
     const onLike = (mural) => {
         let updatedValue = null;
-        if (mural.isLiked === false) {
+        if (mural.isLiked === true) {
             updatedValue = mural.likes += 1;
             // setLikeButtonText(Liked);
-            mural.isLiked = true;
+            //mural.isLiked = false;
             console.log("liked mural")
             console.log(mural);
+            changeLikeButtons();
             let updatedList = [...filteredMurals, mural]
             setFilteredMurals(updatedList);
+            // changeLikeButtons();
         }
 
-        else if (mural.liked === true) {
+        else if (mural.isLiked === false) {
             updatedValue = mural.likes -= 1;
             // setLikeButtonText(Unliked);
-            mural.isLiked = false;
+            //mural.isLiked = true;
+            console.log("unliked mural")
+            console.log(mural);
+            changeLikeButtons();
             let updatedList = [...filteredMurals, mural]
             setFilteredMurals(updatedList);
+            // changeLikeButtons();
         }
 
-        filteredMurals.forEach((mural) => {
-            if (mural.isLiked === true) {
-                setLikeButtonText(Unliked);
-            } 
-            else {
-                setLikeButtonText(Liked);
-            }
-        })
+        // const updatedLikeButtons = filteredMurals.forEach((mural) => {
+        //     if (mural.isLiked === true) {
+        //         setLikeButtonText(Unliked);
+        //     } 
+        //     else {
+        //         setLikeButtonText(Liked);
+        //     }
+        // })
+
+        // setFilteredMurals(updatedLikeButtons);
                          
         updateMural({
             _id: mural._id,
@@ -93,7 +121,7 @@ function MuralsContainer () {
     const updateMural = (updatedMural) => {
         //Updates mural document in database collection
         updateDbMural(updatedMural);
-        console.log(updatedMural);
+        //console.log(updatedMural);
 
         //Update murals list in front end
         //Gets the index of the mural to update
