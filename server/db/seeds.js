@@ -14,7 +14,7 @@ db.murals.insertMany([
         lat: 55.8648678764273,
         lng: -4.2564708648664045,
         imageUrl: "./static/crazy_cat_lady.jpg",
-        likes: 0
+        likes: 15
     },
     {
         name: "The Lost Giant",
@@ -26,7 +26,7 @@ db.murals.insertMany([
         lat: 55.865558,
         lng: -4.267994,
         imageUrl: "./static/lost_giant.jpg",
-        likes: 0
+        likes: 8
     },
     {
         name: "Dr Connolly, I presume",
@@ -50,7 +50,7 @@ db.murals.insertMany([
         lat: 55.868329167922745, 
         lng: -4.2600252186499565,
         imageUrl: "./static/shadow_hand_puppets.jpg",
-        likes: 0
+        likes: 12
     },
     {
         name: "The Musician",
@@ -62,7 +62,7 @@ db.murals.insertMany([
         lat: 55.854975323566705, 
         lng: -4.24585778660124,
         imageUrl: "./static/the_musician.jpg",
-        likes: 0
+        likes: 9
     },
     {
         name: "The Swimmer",
@@ -74,7 +74,7 @@ db.murals.insertMany([
         lat: 55.85683129410766, 
         lng: -4.27024220747374,
         imageUrl: "./static/the_swimmer.jpg",
-        likes: 0
+        likes: 17
     },
     {
         name: "Today we're in love aren't we?",
@@ -86,7 +86,7 @@ db.murals.insertMany([
         lat: 55.85815102993528, 
         lng: -4.265043872630641,
         imageUrl: "./static/today_we're_in_love.jpg",
-        likes: 0
+        likes: 8
     },
     {
         name: "Bubbles",
@@ -99,7 +99,7 @@ db.murals.insertMany([
         lat: 55.863546657324015, 
         lng: -4.255969363017519,
         imageUrl: "./static/bubbles.jpg",
-        likes: 0
+        likes: 34
     },
     {
         name: "As Good as Gold",
@@ -112,7 +112,7 @@ db.murals.insertMany([
         lat: 55.86209272356093, 
         lng: -4.253904515211911,
         imageUrl: "./static/good_as_gold.jpg",
-        likes: 0 
+        likes: 7 
     },  
     {
         name: "Strathclyde University",
@@ -126,7 +126,7 @@ db.murals.insertMany([
         lat: 55.861397639899046, 
         lng: -4.2424881878469325, 
         imageUrl: "./static/strathclyde_university.jpg",
-        likes: 0
+        likes: 20
     },
     {
         name: "Saint Mungo",
@@ -138,7 +138,7 @@ db.murals.insertMany([
         lat: 55.860984159574954,
         lng: -4.238506372111869, 
         imageUrl: "./static/saint_mungo.jpg",
-        likes: 0
+        likes: 13
     },
     {
         name: "Saint Enoch",
@@ -150,7 +150,7 @@ db.murals.insertMany([
         lat: 55.86042851109628,
         lng: -4.24063450520772,
         imageUrl: "./static/saint_enoch.jpg",
-        likes: 0
+        likes: 25
     },
     {
         name: "Fellow Glasgow Residents",
@@ -162,7 +162,7 @@ db.murals.insertMany([
         lat: 55.85919362187882,
         lng: -4.244316500947801,
         imageUrl: "./static/fellow_glasgow.jpg",
-        likes: 0
+        likes: 19
     },
     {
         name: "Badminton",
@@ -175,7 +175,7 @@ db.murals.insertMany([
         lat: 55.85851689610548,
         lng: -4.246794800081792,
         imageUrl: "./static/badminton.jpg",
-        likes: 0
+        likes: 34
     },
     {
         name: "Space Man",
@@ -187,7 +187,7 @@ db.murals.insertMany([
         lat: 55.8570190573762, 
         lng: -4.247197529783755,
         imageUrl: "./static/space_man.jpg",
-        likes: 0
+        likes: 25
     },
     {
         name: "Billy Connolly",
@@ -200,7 +200,7 @@ db.murals.insertMany([
         lat: 55.85647641568549,
         lng: -4.2486076432759665,
         imageUrl: "./static/billy_connolly.jpg",
-        likes: 0
+        likes: 14
     },
     {
         name: "Study of a Woman in Black 1",
@@ -212,7 +212,7 @@ db.murals.insertMany([
         lat: 55.85497534234021,
         lng: -4.245830972111935,
         imageUrl: "./static/woman_in_black.jpg",
-        likes: 0
+        likes: 10
     },
     {
         name: "Study of a Woman in Black 2",
@@ -224,7 +224,7 @@ db.murals.insertMany([
         lat: 55.85566330579437,
         lng: -4.2444880739633355,
         imageUrl: "./static/woman_in_black2.jpg",
-        likes: 0
+        likes: 23
     },
     {
         name: "Mackintosh",
@@ -236,7 +236,7 @@ db.murals.insertMany([
         lat: 55.85446426608605, 
         lng: -4.249790885604259,
         imageUrl: "./static/mackintosh.jpg",
-        likes: 0
+        likes: 15
     },
     {
         name: "Glasgow Tiger",
@@ -249,7 +249,7 @@ db.murals.insertMany([
         lat: 55.855674859794846, 
         lng: -4.2555696796099225,
         imageUrl: "./static/tiger.jpg",
-        likes: 0
+        likes: 10
     },
     {
         name: "The Portrait Gallery",
@@ -261,7 +261,7 @@ db.murals.insertMany([
         lat: 55.85958610239129, 
         lng: -4.262429137142516,
         imageUrl: "./static/portrait_gallery.jpg",
-        likes: 0
+        likes: 5
     },
     {
         name: "The Worlds Most Economical Taxi",
@@ -274,7 +274,7 @@ db.murals.insertMany([
         lat: 55.85858893058056,
         lng: -4.2558412837527575,
         imageUrl: "./static/taxi.jpg",
-        likes: 0
+        likes: 13
     },
     {
         name: "Honey I Shrunk The Kids",
@@ -286,7 +286,7 @@ db.murals.insertMany([
         lat: 55.85913949698629, 
         lng: -4.256065161854666,
         imageUrl: "./static/shrunk_kids.jpg",
-        likes: 0
+        likes: 29
     },
     {
         name: "Wind Power",
@@ -299,7 +299,7 @@ db.murals.insertMany([
         lat: 55.859584420288236, 
         lng: -4.25591369774255,
         imageUrl: "./static/wind_power.jpg",
-        likes: 0
+        likes: 13
     },
     {
         name: "Glasgow Panda",
@@ -312,7 +312,7 @@ db.murals.insertMany([
         lat: 55.859941270978254, 
         lng: -4.254933907022948,
         imageUrl: "./static/glasgow_panda.jpg",
-        likes: 0
+        likes: 40
     },
     {
         name: "Are ye Dancin?",
@@ -326,7 +326,7 @@ db.murals.insertMany([
         lat: 55.85806777285367, 
         lng: -4.25401775843302,
         imageUrl: "./static/are_ye_dancin.jpg",
-        likes: 0
+        likes: 18
     },
     {
         name: "Study of a Woman in Black 3",
@@ -338,7 +338,7 @@ db.murals.insertMany([
         lat: 55.86055888768373,
         lng:  -4.252775170739765,
         imageUrl: "./static/woman_in_black3.jpg",
-        likes: 0
+        likes: 12
     }
 
 ]);
