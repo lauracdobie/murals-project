@@ -43,27 +43,27 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
     const instagram2Node = instagram2Link ? (<a href={instagram2Link}>@{mural.instagram2}</a>): null;
     const instagram3Node = instagram3Link ? (<a href={instagram3Link}>@{mural.instagram3}</a>): null;
 
-    // const handleTourAddRemove = () => {
-    //     if (tourButtonText === "Add mural to my tour list") {
-    //         addToTour(mural);
-    //         setTourButtonText("Remove mural from my tour");
-    //     }
-    //     else {
-    //         removeFromTour(mural);
-    //         setTourButtonText("Add mural to my tour list");
-    //     }
-    // }
-
     const handleTourAddRemove = () => {
-        if (mural.addedToTour) {
-            removeFromTour(mural);
-            setTourButtonText("Add mural to my tour list");
-        }
-        else {
+        if (tourButtonText === "Add mural to my tour list") {
             addToTour(mural);
             setTourButtonText("Remove mural from my tour");
         }
+        else {
+            removeFromTour(mural);
+            setTourButtonText("Add mural to my tour list");
+        }
     }
+
+    // const handleTourAddRemove = () => {
+    //     if (mural.addedToTour) {
+    //         removeFromTour(mural);
+    //         setTourButtonText("Add mural to my tour list");
+    //     }
+    //     else {
+    //         addToTour(mural);
+    //         setTourButtonText("Remove mural from my tour");
+    //     }
+    // }
 
     return (
         <div className="mural-listing">

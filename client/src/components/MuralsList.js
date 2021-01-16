@@ -12,6 +12,9 @@ function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector
 
 
     if (!murals) return null;
+
+    console.log("here are the murals")
+    console.log(murals)
     
     const displayMurals = murals.map(mural => {
         let instagram2Link = null;

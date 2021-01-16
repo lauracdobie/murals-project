@@ -74,7 +74,6 @@ function MuralsContainer () {
     }
 
     const removeFromTour = (muralToRemove) => {
-        // setTourButtonText("Add mural to my tour list");
         let muralsList = [...tourMurals];
         const muralToRemoveIndex = tourMurals.indexOf(muralToRemove);
         muralToRemove.addedToTour = false;
@@ -100,15 +99,7 @@ function MuralsContainer () {
                         setTourButtonText={setTourButtonText}/>}
                 />
                 <Route path='/view-my-tour' 
-                    render={() => <MuralsList 
-                    handleUserFilter={handleUserFilter} 
-                    handleMuralSelector={handleMuralSelector} 
-                    murals={tourMurals} 
-                    updateMural={updateMural}
-                    addToTour={addToTour}
-                    removeFromTour={removeFromTour}
-                    tourButtonText={tourButtonText}
-                    setTourButtonText={setTourButtonText}/>}/>
+                    render={() => <TestInfo tourMurals={tourMurals}/>}/>
             </>
         </Router>
     )
