@@ -13,6 +13,8 @@ function MuralsContainer () {
     const [murals, setMurals] = useState([]);
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
+    const [tourMurals, setTourMurals] = useState([]);
+
     useEffect(()=> {
         getMurals() 
         .then((data) => {
@@ -59,7 +61,25 @@ function MuralsContainer () {
 
         //Sets the value of the orginal murals list to the updated array
         setMurals(updatedMurals);
+    }
 
+    const addToTour = (newTourMural) => {
+        // newTourMural.addedToTour = true;
+        const updatedTour = [...tourMurals];
+        updatedTour.push(newTourMural);
+        setTourMurals(updatedTour);
+        console.log("mural added");
+        console.log(tourMurals);
+    }
+
+    const removeFromTour = (muralToRemove) => {
+        let muralsList = [...tourMurals];
+        const muralToRemoveIndex = tourMurals.indexOf(muralToRemove);
+        // muralToRemove.addedToTour = false;
+        muralsList.splice(muralToRemoveIndex, 1);
+        setTourMurals(muralsList);
+        console.log("mural removed");
+        console.log(tourMurals);
     }
 
     return (
@@ -67,9 +87,22 @@ function MuralsContainer () {
             <>
             <Header/>
                 <Route exact path='/'
-                    render={() => <MuralsList handleUserFilter={handleUserFilter} handleMuralSelector={handleMuralSelector} murals={filteredMurals} updateMural={updateMural}/>}
+                    render={() => <MuralsList 
+                        handleUserFilter={handleUserFilter} 
+                        handleMuralSelector={handleMuralSelector} 
+                        murals={filteredMurals} 
+                        updateMural={updateMural}
+                        addToTour={addToTour}
+                        removeFromTour={removeFromTour}/>}
                 />
-                <Route path='/view-my-tour' component={TestInfo}/>
+                <Route path='/view-my-tour' 
+                    render={() => <MuralsList 
+                    handleUserFilter={handleUserFilter} 
+                    handleMuralSelector={handleMuralSelector} 
+                    murals={tourMurals} 
+                    updateMural={updateMural}
+                    addToTour={addToTour}
+                    removeFromTour={removeFromTour}/>}/>
             </>
         </Router>
     )

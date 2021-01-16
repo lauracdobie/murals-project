@@ -2,8 +2,15 @@ import Mural from './Mural';
 import MuralMap from './MuralMap';
 import './MuralsList.css';
 import MuralFilterForm from './MuralFilterForm';
+import {useState} from 'react';
+import Liked from '../assets/liked.png';
+import Unliked from '../assets/unliked.png';
 
-function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}){
+function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, onLike, addToTour, removeFromTour}){
+    const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
+    // const [likeButtonText, setLikeButtonText] = useState(Unliked);
+
+
     if (!murals) return null;
     
     const displayMurals = murals.map(mural => {
@@ -18,14 +25,26 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}
             instagram3Link = ("https://www.instagram.com/" + mural.instagram3)
         }
 
+        mural.likeButton = Unliked;
+        // console.log(mural);
+
         return(
         <Mural
-        murals={murals}
-        mural={mural}
-        updateMural={updateMural}
-        instagramLink = {"https://www.instagram.com/" + mural.instagram}
-        instagram2Link = {instagram2Link}
-        instagram3Link = {instagram3Link}
+            murals={murals}
+            mural={mural}
+            updateMural={updateMural}
+            instagramLink = {"https://www.instagram.com/" + mural.instagram}
+            instagram2Link = {instagram2Link}
+            instagram3Link = {instagram3Link}
+            visitedButtonText={visitedButtonText}
+            setVisitedButtonText={setVisitedButtonText}
+            addToTour={addToTour}
+            removeFromTour={removeFromTour}
+            // likeButtonText={likeButtonText}
+            // setLikeButtonText={setLikeButtonText}
+            onLike={onLike}
+            // muralLikeButton={mural.likeButton}
+        // muralIsLiked={mural.isLiked}
         />)
     })
 
@@ -50,8 +69,8 @@ function MuralsList({murals, updateMural, handleMuralSelector, handleUserFilter}
                 </div>
                 <div className="mural-map">
                     <MuralMap 
-                    murals={murals} 
-                    updateMural={updateMural}
+                        murals={murals} 
+                        updateMural={updateMural}
                     />
                 </div>
             </section>
