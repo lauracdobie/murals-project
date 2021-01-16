@@ -4,8 +4,8 @@ import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 import InstagramIcon from '../assets/instagram.png';
 
-function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, addToTour, removeFromTour}){
-    const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list")
+function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, addToTour, removeFromTour, tourButtonText, setTourButtonText}){
+    // const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list")
     // const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
 
     // const [visitedClass, setVisitedClass] = useState('mural-listing');
@@ -43,14 +43,25 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
     const instagram2Node = instagram2Link ? (<a href={instagram2Link}>@{mural.instagram2}</a>): null;
     const instagram3Node = instagram3Link ? (<a href={instagram3Link}>@{mural.instagram3}</a>): null;
 
+    // const handleTourAddRemove = () => {
+    //     if (tourButtonText === "Add mural to my tour list") {
+    //         addToTour(mural);
+    //         setTourButtonText("Remove mural from my tour");
+    //     }
+    //     else {
+    //         removeFromTour(mural);
+    //         setTourButtonText("Add mural to my tour list");
+    //     }
+    // }
+
     const handleTourAddRemove = () => {
-        if (tourButtonText === "Add mural to my tour list") {
-            addToTour(mural);
-            setTourButtonText("Remove mural from my tour");
-        }
-        else {
+        if (mural.addedToTour) {
             removeFromTour(mural);
             setTourButtonText("Add mural to my tour list");
+        }
+        else {
+            addToTour(mural);
+            setTourButtonText("Remove mural from my tour");
         }
     }
 

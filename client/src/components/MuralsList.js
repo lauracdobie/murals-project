@@ -6,7 +6,7 @@ import {useState} from 'react';
 import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 
-function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, onLike, addToTour, removeFromTour}){
+function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, onLike, addToTour, removeFromTour, tourButtonText, setTourButtonText}){
     const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
     // const [likeButtonText, setLikeButtonText] = useState(Unliked);
 
@@ -40,11 +40,9 @@ function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector
             setVisitedButtonText={setVisitedButtonText}
             addToTour={addToTour}
             removeFromTour={removeFromTour}
-            // likeButtonText={likeButtonText}
-            // setLikeButtonText={setLikeButtonText}
             onLike={onLike}
-            // muralLikeButton={mural.likeButton}
-        // muralIsLiked={mural.isLiked}
+            tourButtonText={tourButtonText}
+            setTourButtonText={setTourButtonText}
         />)
     })
 

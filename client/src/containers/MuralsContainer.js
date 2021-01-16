@@ -14,6 +14,7 @@ function MuralsContainer () {
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
     const [tourMurals, setTourMurals] = useState([]);
+    const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list");
 
     useEffect(()=> {
         getMurals() 
@@ -64,8 +65,8 @@ function MuralsContainer () {
     }
 
     const addToTour = (newTourMural) => {
-        // newTourMural.addedToTour = true;
-        const updatedTour = [...tourMurals];
+        newTourMural.addedToTour = true;
+        let updatedTour = [...tourMurals];
         updatedTour.push(newTourMural);
         setTourMurals(updatedTour);
         console.log("mural added");
@@ -73,9 +74,10 @@ function MuralsContainer () {
     }
 
     const removeFromTour = (muralToRemove) => {
+        // setTourButtonText("Add mural to my tour list");
         let muralsList = [...tourMurals];
         const muralToRemoveIndex = tourMurals.indexOf(muralToRemove);
-        // muralToRemove.addedToTour = false;
+        muralToRemove.addedToTour = false;
         muralsList.splice(muralToRemoveIndex, 1);
         setTourMurals(muralsList);
         console.log("mural removed");
@@ -93,7 +95,9 @@ function MuralsContainer () {
                         murals={filteredMurals} 
                         updateMural={updateMural}
                         addToTour={addToTour}
-                        removeFromTour={removeFromTour}/>}
+                        removeFromTour={removeFromTour}
+                        tourButtonText={tourButtonText}
+                        setTourButtonText={setTourButtonText}/>}
                 />
                 <Route path='/view-my-tour' 
                     render={() => <MuralsList 
@@ -102,7 +106,9 @@ function MuralsContainer () {
                     murals={tourMurals} 
                     updateMural={updateMural}
                     addToTour={addToTour}
-                    removeFromTour={removeFromTour}/>}/>
+                    removeFromTour={removeFromTour}
+                    tourButtonText={tourButtonText}
+                    setTourButtonText={setTourButtonText}/>}/>
             </>
         </Router>
     )
