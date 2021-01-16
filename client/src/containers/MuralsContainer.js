@@ -1,3 +1,4 @@
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {getMurals, updateDbMural} from './MuralsService';
 import {useEffect, useState} from 'react';
 import MuralsList from '../components/MuralsList';
@@ -5,6 +6,7 @@ import MuralMap from '../components/MuralMap';
 import MuralFilterForm from '../components/MuralFilterForm';
 import Mural from '../components/Mural';
 import Header from '../components/Header';
+import TestInfo from '../components/TestInfo';
 
 function MuralsContainer () {
     
@@ -61,11 +63,15 @@ function MuralsContainer () {
     }
 
     return (
-
-        <>
+        <Router>
+            <>
             <Header/>
-            <MuralsList handleUserFilter={handleUserFilter} handleMuralSelector={handleMuralSelector} murals={filteredMurals} updateMural={updateMural}/>
-        </>
+                <Route exact path='/'
+                    render={() => <MuralsList handleUserFilter={handleUserFilter} handleMuralSelector={handleMuralSelector} murals={filteredMurals} updateMural={updateMural}/>}
+                />
+                <Route path='/view-my-tour' component={TestInfo}/>
+            </>
+        </Router>
     )
 }
 

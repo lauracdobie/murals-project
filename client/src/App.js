@@ -3,7 +3,7 @@ import MuralsContainer from './containers/MuralsContainer';
 
 function App() {
   return (
-    <MuralsContainer/>  
+    <MuralsContainer /> 
   );
 }
 
