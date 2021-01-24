@@ -7,6 +7,8 @@ import MuralFilterForm from '../components/MuralFilterForm';
 import Mural from '../components/Mural';
 import Header from '../components/Header';
 import TestInfo from '../components/TestInfo';
+import Liked from '../assets/liked.png';
+import Unliked from '../assets/unliked.png';
 
 function MuralsContainer () {
     
@@ -14,7 +16,8 @@ function MuralsContainer () {
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
     const [tourMurals, setTourMurals] = useState([]);
-    // const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list");
+    const [likeButtonText, setLikeButtonText] = useState(Unliked);
+    const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list");
 
     useEffect(()=> {
         getMurals() 
@@ -24,6 +27,20 @@ function MuralsContainer () {
             setFilteredMurals(data)
         })
     }, [])
+
+    // useEffect(() => {
+    //     setFilteredMurals()
+    // }, [])
+
+    const displayLikeButton = (mural) => {
+        if (mural.isLiked === true) {
+            setLikeButtonText(Liked)
+        }
+
+        else {
+            setLikeButtonText(Unliked)
+        }
+    }
 
     const handleUserFilter = (userInput) => {
         const someMurals = murals.filter((currentMural) => {
@@ -61,7 +78,37 @@ function MuralsContainer () {
         updatedMurals[updatedMuralIndex] = updatedMural;
 
         //Sets the value of the orginal murals list to the updated array
-        setMurals(updatedMurals);
+        setFilteredMurals(updatedMurals);
+    }
+
+    const handleLike = (mural) => {
+        let updatedValue = null;
+        if (mural.isLiked === false) {
+            updatedValue = mural.likes += 1;
+            mural.isLiked = true;
+            // setLikeButtonText(Liked);
+        }
+        else {
+            updatedValue = mural.likes -= 1;
+            mural.isLiked = false;
+            // setLikeButtonText(Unliked);
+        }
+
+        displayLikeButton(mural);
+
+        updateMural({
+            _id: mural._id,
+            name: mural.name,
+            artist: mural.artist,
+            instagram: mural.instagram,
+            location: mural.location,
+            description: mural.description,
+            year: mural.year,
+            lat: mural.lat,
+            lng: mural.lng,
+            imageUrl: mural.imageUrl, 
+            likes: updatedValue
+        })
     }
 
     const addToTour = (newTourMural) => {
@@ -91,12 +138,15 @@ function MuralsContainer () {
                     render={() => <MuralsList 
                         handleUserFilter={handleUserFilter} 
                         handleMuralSelector={handleMuralSelector} 
-                        murals={filteredMurals} 
+                        murals={filteredMurals}
+                        handleLike={handleLike}
+                        likeButtonText={likeButtonText} 
                         updateMural={updateMural}
                         addToTour={addToTour}
                         removeFromTour={removeFromTour}
                         tourMurals={tourMurals}
-                        setTourMurals={setTourMurals}/>}
+                        setTourMurals={setTourMurals}
+                        displayLikeButton={displayLikeButton}/>}
                 />
                 <Route path='/view-my-tour' 
                     render={() => <MuralsList
@@ -104,9 +154,13 @@ function MuralsContainer () {
                         handleUserFilter={handleUserFilter} 
                         handleMuralSelector={handleMuralSelector} 
                         updateMural={updateMural}
+                        likeButtonText={likeButtonText}
+                        handleLike={handleLike} 
                         addToTour={addToTour}
                         removeFromTour={removeFromTour}
-                        setTourMurals={setTourMurals}/>}/>
+                        setTourMurals={setTourMurals}
+                        handleLike={handleLike}
+                        displayLikeButton={displayLikeButton}/>}/>
             </>
         </Router>
     )

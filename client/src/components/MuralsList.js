@@ -7,9 +7,8 @@ import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 import TestInfo from './TestInfo';
 
-function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, onLike, addToTour, removeFromTour}){
-    const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
-    const [likeButtonText, setLikeButtonText] = useState(Unliked);
+function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, addToTour, removeFromTour, handleLike, likeButtonText, displayLikeButton}){
+    // const [likeButtonText, setLikeButtonText] = useState(Unliked);
 
 
     if (!murals) return null;
@@ -29,22 +28,23 @@ function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector
             instagram3Link = ("https://www.instagram.com/" + mural.instagram3)
         }
 
-        mural.likeButton = Unliked;
-        // console.log(mural);
+        // displayLikeButton(mural);
 
         return(
         <Mural
             murals={murals}
             mural={mural}
+            muralLiked={mural.isLiked}
+            key={mural.id}
             updateMural={updateMural}
             instagramLink = {"https://www.instagram.com/" + mural.instagram}
             instagram2Link = {instagram2Link}
             instagram3Link = {instagram3Link}
-            visitedButtonText={visitedButtonText}
-            setVisitedButtonText={setVisitedButtonText}
             addToTour={addToTour}
             removeFromTour={removeFromTour}
-            onLike={onLike}
+            handleLike={handleLike}
+            likeButtonText={likeButtonText}
+            displayLikeButton={displayLikeButton}
         />)
     })
 
