@@ -3,9 +3,9 @@ import MuralMap from './MuralMap';
 import './MuralsList.css';
 import MuralFilterForm from './MuralFilterForm';
 import {useState} from 'react';
-import Liked from '../assets/liked.png';
-import Unliked from '../assets/unliked.png';
-import TestInfo from './TestInfo';
+// import Liked from '../assets/liked.png';
+// import Unliked from '../assets/unliked.png';
+// import TestInfo from './TestInfo';
 
 function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, addToTour, removeFromTour, handleLike, likeButtonText, displayLikeButton}){
     // const [likeButtonText, setLikeButtonText] = useState(Unliked);
@@ -27,8 +27,6 @@ function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector
         if (mural.instagram3) {
             instagram3Link = ("https://www.instagram.com/" + mural.instagram3)
         }
-
-        // displayLikeButton(mural);
 
         return(
         <Mural

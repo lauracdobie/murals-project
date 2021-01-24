@@ -2,13 +2,10 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {getMurals, updateDbMural} from './MuralsService';
 import {useEffect, useState} from 'react';
 import MuralsList from '../components/MuralsList';
-import MuralMap from '../components/MuralMap';
-import MuralFilterForm from '../components/MuralFilterForm';
-import Mural from '../components/Mural';
 import Header from '../components/Header';
-import TestInfo from '../components/TestInfo';
-import Liked from '../assets/liked.png';
-import Unliked from '../assets/unliked.png';
+// import TestInfo from '../components/TestInfo';
+// import Liked from '../assets/liked.png';
+// import Unliked from '../assets/unliked.png';
 
 function MuralsContainer () {
     
@@ -16,8 +13,8 @@ function MuralsContainer () {
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
     const [tourMurals, setTourMurals] = useState([]);
-    const [likeButtonText, setLikeButtonText] = useState(Unliked);
-    const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list");
+    // const [likeButtonText, setLikeButtonText] = useState(Unliked);
+    // const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list");
 
     useEffect(()=> {
         getMurals() 
@@ -32,15 +29,15 @@ function MuralsContainer () {
     //     setFilteredMurals()
     // }, [])
 
-    const displayLikeButton = (mural) => {
-        if (mural.isLiked === true) {
-            setLikeButtonText(Liked)
-        }
+    // const displayLikeButton = (mural) => {
+    //     if (mural.isLiked === true) {
+    //         setLikeButtonText(Liked)
+    //     }
 
-        else {
-            setLikeButtonText(Unliked)
-        }
-    }
+    //     else {
+    //         setLikeButtonText(Unliked)
+    //     }
+    // }
 
     const handleUserFilter = (userInput) => {
         const someMurals = murals.filter((currentMural) => {
@@ -81,35 +78,35 @@ function MuralsContainer () {
         setFilteredMurals(updatedMurals);
     }
 
-    const handleLike = (mural) => {
-        let updatedValue = null;
-        if (mural.isLiked === false) {
-            updatedValue = mural.likes += 1;
-            mural.isLiked = true;
-            // setLikeButtonText(Liked);
-        }
-        else {
-            updatedValue = mural.likes -= 1;
-            mural.isLiked = false;
-            // setLikeButtonText(Unliked);
-        }
+    // const handleLike = (mural) => {
+    //     let updatedValue = null;
+    //     if (mural.isLiked === false) {
+    //         updatedValue = mural.likes += 1;
+    //         mural.isLiked = true;
+    //         // setLikeButtonText(Liked);
+    //     }
+    //     else {
+    //         updatedValue = mural.likes -= 1;
+    //         mural.isLiked = false;
+    //         // setLikeButtonText(Unliked);
+    //     }
 
-        displayLikeButton(mural);
+    //     displayLikeButton(mural);
 
-        updateMural({
-            _id: mural._id,
-            name: mural.name,
-            artist: mural.artist,
-            instagram: mural.instagram,
-            location: mural.location,
-            description: mural.description,
-            year: mural.year,
-            lat: mural.lat,
-            lng: mural.lng,
-            imageUrl: mural.imageUrl, 
-            likes: updatedValue
-        })
-    }
+    //     updateMural({
+    //         _id: mural._id,
+    //         name: mural.name,
+    //         artist: mural.artist,
+    //         instagram: mural.instagram,
+    //         location: mural.location,
+    //         description: mural.description,
+    //         year: mural.year,
+    //         lat: mural.lat,
+    //         lng: mural.lng,
+    //         imageUrl: mural.imageUrl, 
+    //         likes: updatedValue
+    //     })
+    // }
 
     const addToTour = (newTourMural) => {
         newTourMural.addedToTour = true;
@@ -132,36 +129,29 @@ function MuralsContainer () {
 
     return (
         <Router>
-            <>
             <Header/>
-                <Route exact path='/'
-                    render={() => <MuralsList 
-                        handleUserFilter={handleUserFilter} 
-                        handleMuralSelector={handleMuralSelector} 
-                        murals={filteredMurals}
-                        handleLike={handleLike}
-                        likeButtonText={likeButtonText} 
-                        updateMural={updateMural}
-                        addToTour={addToTour}
-                        removeFromTour={removeFromTour}
-                        tourMurals={tourMurals}
-                        setTourMurals={setTourMurals}
-                        displayLikeButton={displayLikeButton}/>}
-                />
-                <Route path='/view-my-tour' 
-                    render={() => <MuralsList
-                        murals={tourMurals}
-                        handleUserFilter={handleUserFilter} 
-                        handleMuralSelector={handleMuralSelector} 
-                        updateMural={updateMural}
-                        likeButtonText={likeButtonText}
-                        handleLike={handleLike} 
-                        addToTour={addToTour}
-                        removeFromTour={removeFromTour}
-                        setTourMurals={setTourMurals}
-                        handleLike={handleLike}
-                        displayLikeButton={displayLikeButton}/>}/>
-            </>
+                <Switch>
+                    <Route exact path='/'
+                        render={() => <MuralsList 
+                            handleUserFilter={handleUserFilter} 
+                            handleMuralSelector={handleMuralSelector} 
+                            murals={filteredMurals}
+                            updateMural={updateMural}
+                            addToTour={addToTour}
+                            removeFromTour={removeFromTour}
+                            tourMurals={tourMurals}
+                            setTourMurals={setTourMurals}/>}
+                    />
+                    <Route path='/view-my-tour' 
+                        render={() => <MuralsList
+                            murals={tourMurals}
+                            handleUserFilter={handleUserFilter} 
+                            handleMuralSelector={handleMuralSelector} 
+                            updateMural={updateMural}
+                            addToTour={addToTour}
+                            removeFromTour={removeFromTour}
+                            setTourMurals={setTourMurals}/>}/>
+                </Switch>
         </Router>
     )
 }
