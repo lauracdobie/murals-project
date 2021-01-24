@@ -1,11 +1,12 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import './Mural.css';
 import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
 import InstagramIcon from '../assets/instagram.png';
 
-function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, addToTour, removeFromTour, tourButtonText, setTourButtonText}){
-    // const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list")
+function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, instagram3Link, addToTour, removeFromTour}){
+    const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list")
+    // const [tourMural, setTourMural] = useState({});
     // const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
 
     // const [visitedClass, setVisitedClass] = useState('mural-listing');
@@ -53,6 +54,10 @@ function Mural ({murals, mural, updateMural, instagramLink, instagram2Link, inst
             setTourButtonText("Add mural to my tour list");
         }
     }
+
+    // useEffect(() => {
+    //     handleTourAddRemove(tourMural);
+    // }, [tourMural])
 
     // const handleTourAddRemove = () => {
     //     if (mural.addedToTour) {

@@ -14,7 +14,7 @@ function MuralsContainer () {
     const [filteredMurals, setFilteredMurals] = useState([]);
     const [muralSelector, setMuralSelector] = useState("");
     const [tourMurals, setTourMurals] = useState([]);
-    const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list");
+    // const [tourButtonText, setTourButtonText] = useState("Add mural to my tour list");
 
     useEffect(()=> {
         getMurals() 
@@ -95,11 +95,18 @@ function MuralsContainer () {
                         updateMural={updateMural}
                         addToTour={addToTour}
                         removeFromTour={removeFromTour}
-                        tourButtonText={tourButtonText}
-                        setTourButtonText={setTourButtonText}/>}
+                        tourMurals={tourMurals}
+                        setTourMurals={setTourMurals}/>}
                 />
                 <Route path='/view-my-tour' 
-                    render={() => <TestInfo tourMurals={tourMurals}/>}/>
+                    render={() => <MuralsList
+                        murals={tourMurals}
+                        handleUserFilter={handleUserFilter} 
+                        handleMuralSelector={handleMuralSelector} 
+                        updateMural={updateMural}
+                        addToTour={addToTour}
+                        removeFromTour={removeFromTour}
+                        setTourMurals={setTourMurals}/>}/>
             </>
         </Router>
     )

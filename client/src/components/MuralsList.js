@@ -5,17 +5,18 @@ import MuralFilterForm from './MuralFilterForm';
 import {useState} from 'react';
 import Liked from '../assets/liked.png';
 import Unliked from '../assets/unliked.png';
+import TestInfo from './TestInfo';
 
-function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, onLike, addToTour, removeFromTour, tourButtonText, setTourButtonText}){
+function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector, handleUserFilter, onLike, addToTour, removeFromTour}){
     const [visitedButtonText, setVisitedButtonText] = useState("Not Visited");
-    // const [likeButtonText, setLikeButtonText] = useState(Unliked);
+    const [likeButtonText, setLikeButtonText] = useState(Unliked);
 
 
     if (!murals) return null;
 
     console.log("here are the murals")
     console.log(murals)
-    
+
     const displayMurals = murals.map(mural => {
         let instagram2Link = null;
         let instagram3Link = null;
@@ -44,8 +45,6 @@ function MuralsList({murals, setFilteredMurals, updateMural, handleMuralSelector
             addToTour={addToTour}
             removeFromTour={removeFromTour}
             onLike={onLike}
-            tourButtonText={tourButtonText}
-            setTourButtonText={setTourButtonText}
         />)
     })
 

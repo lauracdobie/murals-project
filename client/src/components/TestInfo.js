@@ -3,12 +3,12 @@ function TestInfo({tourMurals}) {
     console.log(tourMurals)
     const displayTourMurals = () => {
         if (tourMurals.length = 0) {
-            return (<p>There are no murals in your list!</p>);
+            return <p>There are no murals in your list!</p>;
         }
 
         else {
-            tourMurals.map(mural => (<p>{mural.name}</p>));
-            console.log(mural.name)
+            tourMurals.map(mural => <p>{mural.name}</p>);
+            // console.log(mural.name)
         }
 
     }
@@ -16,7 +16,7 @@ function TestInfo({tourMurals}) {
     return (
         <>
             <h1>TourInfo</h1>
-            {displayTourMurals}
+            {displayTourMurals()}
         </>
     );
 }
